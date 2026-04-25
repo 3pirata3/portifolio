@@ -28,7 +28,7 @@ export default function About() {
                 Sobre
               </h1>
               <p className="text-lg md:text-xl text-muted-foreground font-light tracking-wide">
-                Estrategia, design e performance para negocios digitais
+                Marketing, vendas e retencao conectados em uma metodologia de crescimento previsivel
               </p>
             </motion.div>
           </div>
@@ -132,7 +132,7 @@ export default function About() {
                 </div>
 
                 <div className="space-y-4">
-                  <h3 className="text-2xl font-light tracking-wide">O que entra no portifolio</h3>
+                  <h3 className="text-2xl font-light tracking-wide">O que a XGrowth faz</h3>
                   <div className="grid gap-3">
                     {photographerInfo.awards.map((item) => (
                       <p key={item} className="text-muted-foreground font-light">
@@ -140,6 +140,18 @@ export default function About() {
                       </p>
                     ))}
                   </div>
+                </div>
+
+                <div className="space-y-4">
+                  <h3 className="text-2xl font-light tracking-wide">Metodologia Iceberg</h3>
+                  {photographerInfo.approach.split('\n\n').map((paragraph, index) => (
+                    <p
+                      key={index}
+                      className="text-base md:text-lg font-light leading-relaxed text-muted-foreground"
+                    >
+                      {paragraph}
+                    </p>
+                  ))}
                 </div>
 
                 <div className="pt-4 space-y-2">

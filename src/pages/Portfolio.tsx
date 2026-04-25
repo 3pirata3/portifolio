@@ -11,7 +11,7 @@ export default function Portfolio() {
     <>
       <SEOHead
         title="Portifolio"
-        description="Conheca o portifolio da Xgrowth Company com criativos, campanhas, landing pages, social media e materiais digitais."
+        description="Conheca o portifolio da XGrowth Company com criativos, campanhas, landing pages, social media e materiais digitais aplicados a crescimento."
       />
 
       <div className="min-h-screen">
@@ -26,7 +26,7 @@ export default function Portfolio() {
                 Portifolio
               </h1>
               <p className="text-lg md:text-xl text-muted-foreground font-light tracking-wide max-w-2xl mx-auto">
-                Uma selecao de criativos, campanhas e experiencias digitais desenvolvidas pela Xgrowth Company
+                Uma selecao de criativos, campanhas e experiencias digitais que mostram a estrategia ganhando forma na pratica
               </p>
             </motion.div>
           </div>

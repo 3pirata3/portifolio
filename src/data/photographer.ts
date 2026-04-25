@@ -1,21 +1,21 @@
 import type { PhotographerInfo } from '@/types';
 
 export const photographerInfo: PhotographerInfo = {
-  name: 'Xgrowth Company',
-  tagline: 'Criativos, trafego e presenca digital',
+  name: 'XGrowth Company',
+  tagline: 'Marketing e vendas para crescimento previsivel',
   heroIntroduction:
-    'Portifolio de criativos, campanhas e experiencias digitais desenvolvidas para marcas que querem vender mais com clareza, estrategia e visual forte.',
-  biography: `A Xgrowth Company cria pecas digitais para negocios que precisam se posicionar melhor, comunicar ofertas com mais impacto e transformar atencao em resultado. Nosso trabalho combina estrategia, design, copy e leitura de performance para construir criativos prontos para campanhas, redes sociais, lancamentos e funis de venda.
+    'Metodologia comprovada para transformar seu negocio em uma maquina de vendas previsivel, conectando marketing, time comercial, retencao e escala.',
+  biography: `A XGrowth Company atua alem da ponta do iceberg. Em vez de trabalhar apenas redes sociais e trafego pago, conectamos estrategia, demanda, processo comercial e retencao para criar previsibilidade em cada etapa do funil.
 
-Este portifolio nasce como uma vitrine dos criativos ja desenvolvidos pela empresa. A ideia e reunir anuncios, carrosseis, artes, landing pages e materiais visuais em um so lugar, facilitando a apresentacao para clientes, parceiros e novos projetos.`,
-  approach: `Nosso processo parte da mensagem central da oferta: o que precisa ser comunicado, para quem, em qual canal e com qual objetivo. A partir disso, criamos pecas com hierarquia visual, copy direta e adaptacao para os formatos mais importantes da campanha.
+O portifolio existe para mostrar a execucao na pratica: campanhas, criativos, paginas, materiais e estruturas que ajudam negocios a gerar demanda qualificada, vender melhor e manter clientes comprando por mais tempo.`,
+  approach: `Nossa metodologia Iceberg revela oportunidades ocultas dentro do negocio antes de acelerar campanhas. Exploramos mercado, oferta, concorrencia e processo comercial; lapidamos a estrategia; escalamos a execucao; e extraimos resultados com otimizacao continua.
 
-Cada criativo e pensado para ser bonito, mas tambem funcional: precisa prender atencao, deixar o beneficio claro e conduzir a pessoa para a proxima acao.`,
+Assim, o crescimento nao depende apenas de publicar conteudo ou apertar botoes em campanhas. Ele nasce de um sistema completo, mensuravel e preparado para vender de forma consistente.`,
   awards: [
-    'Criativos para Meta Ads e Google Ads',
-    'Artes para redes sociais e campanhas',
-    'Landing pages e paginas de captura',
-    'Identidade visual para ofertas digitais',
+    'Retencao de clientes',
+    'Treinamento do time comercial',
+    'Aumento de demanda com marketing estrategico',
+    'Criativos, campanhas e paginas para conversao',
   ],
   clients: [
     'Negocios locais',

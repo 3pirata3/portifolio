@@ -48,9 +48,9 @@ const contactFormSchema = z.object({
 type ContactFormValues = z.infer<typeof contactFormSchema>;
 
 const projectTypeLabels: Record<ContactFormValues['projectType'], string> = {
-  creative: 'Criativos e artes',
-  traffic: 'Campanhas e trafego',
-  brand: 'Identidade e pagina',
+  creative: 'Criativos, paginas e campanha',
+  traffic: 'Trafego, demanda e performance',
+  brand: 'Funil, comercial e retencao',
 };
 
 /**
@@ -178,13 +178,13 @@ export function ContactForm() {
                 </FormControl>
                 <SelectContent className="bg-popover z-50">
                   <SelectItem value="creative" className="font-light">
-                    Criativos e artes
+                    Criativos, paginas e campanha
                   </SelectItem>
                   <SelectItem value="traffic" className="font-light">
-                    Campanhas e trafego
+                    Trafego, demanda e performance
                   </SelectItem>
                   <SelectItem value="brand" className="font-light">
-                    Identidade e pagina
+                    Funil, comercial e retencao
                   </SelectItem>
                 </SelectContent>
               </Select>
@@ -203,7 +203,7 @@ export function ContactForm() {
               </FormLabel>
               <FormControl>
                 <Textarea
-                  placeholder="Conte sobre sua campanha, oferta ou material que precisa criar..."
+                  placeholder="Conte sobre seu negocio, seus gargalos de venda e o que voce quer melhorar..."
                   className="min-h-32 font-light resize-none"
                   {...field}
                 />

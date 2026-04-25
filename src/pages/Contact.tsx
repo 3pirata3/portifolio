@@ -13,7 +13,7 @@ export default function Contact() {
     <>
       <SEOHead
         title="Contato"
-        description={`Entre em contato com a ${photographerInfo.name} para criativos, campanhas, paginas e materiais digitais. ${photographerInfo.availability}.`}
+        description={`Entre em contato com a ${photographerInfo.name} para estruturar marketing, vendas, retencao e crescimento previsivel. ${photographerInfo.availability}.`}
       />
 
       <div className="min-h-screen">
@@ -28,7 +28,7 @@ export default function Contact() {
                 Entre em Contato
               </h1>
               <p className="text-lg md:text-xl text-muted-foreground font-light tracking-wide">
-                Vamos conversar sobre os criativos do seu proximo projeto
+                Vamos conversar sobre como transformar seu negocio em uma maquina de vendas previsivel
               </p>
             </motion.div>
           </div>
@@ -48,7 +48,7 @@ export default function Contact() {
                     Envie uma Mensagem
                   </h2>
                   <p className="text-muted-foreground font-light">
-                    Preencha o formulario e conte o que voce precisa criar. {photographerInfo.availability}.
+                    Preencha o formulario e conte quais gargalos de crescimento voce quer resolver. {photographerInfo.availability}.
                   </p>
                 </div>
 
