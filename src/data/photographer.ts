@@ -1,41 +1,40 @@
 import type { PhotographerInfo } from '@/types';
 
 export const photographerInfo: PhotographerInfo = {
-  name: 'Sarah Mitchell',
-  tagline: 'Fotógrafa Editorial e Comercial',
-  heroIntroduction: 'Criando narrativas visuais que capturam momentos autênticos e histórias atemporais.',
-  biography: `Sarah Mitchell é uma fotógrafa premiada, especializada em trabalhos editoriais e comerciais, com reconhecimentos como Fotógrafa Editorial do Ano 2023 pelo International Photography Awards e Vencedora do PDN Photo Annual 2022. Com mais de uma década de experiência, seu trabalho foi destaque em diversas publicações e exposições internacionais, em colaborações com clientes como Vogue, The New York Times, National Geographic, Adobe, Apple, Nike e Architectural Digest.
+  name: 'Xgrowth Company',
+  tagline: 'Criativos, trafego e presenca digital',
+  heroIntroduction:
+    'Portifolio de criativos, campanhas e experiencias digitais desenvolvidas para marcas que querem vender mais com clareza, estrategia e visual forte.',
+  biography: `A Xgrowth Company cria pecas digitais para negocios que precisam se posicionar melhor, comunicar ofertas com mais impacto e transformar atencao em resultado. Nosso trabalho combina estrategia, design, copy e leitura de performance para construir criativos prontos para campanhas, redes sociais, lancamentos e funis de venda.
 
-Baseada em Nova York, com mestrado (MFA) em Fotografia pela School of Visual Arts, Sarah traz uma perspectiva única para cada projeto, unindo excelência técnica e visão artística. Sua abordagem fotográfica é profundamente enraizada na narrativa, acreditando que cada imagem deve transmitir emoção e significado além do apelo visual.`,
-  approach: `Minha fotografia é guiada por três princípios: autenticidade, composição e luz. Acredito que as melhores imagens nascem quando os retratados se sentem confortáveis e genuínos, quando a composição conduz o olhar de forma natural, e quando a luz revela a essência do momento.
+Este portifolio nasce como uma vitrine dos criativos ja desenvolvidos pela empresa. A ideia e reunir anuncios, carrosseis, artes, landing pages e materiais visuais em um so lugar, facilitando a apresentacao para clientes, parceiros e novos projetos.`,
+  approach: `Nosso processo parte da mensagem central da oferta: o que precisa ser comunicado, para quem, em qual canal e com qual objetivo. A partir disso, criamos pecas com hierarquia visual, copy direta e adaptacao para os formatos mais importantes da campanha.
 
-Seja em assignments editoriais ou projetos comerciais, busco criar imagens que transcendem o propósito imediato e se tornam declarações visuais duradouras.`,
+Cada criativo e pensado para ser bonito, mas tambem funcional: precisa prender atencao, deixar o beneficio claro e conduzir a pessoa para a proxima acao.`,
   awards: [
-    'International Photography Awards — Fotógrafa Editorial do Ano 2023',
-    'PDN Photo Annual — Vencedora 2022',
-    'Hasselblad Masters — Finalista 2021',
-    'Communication Arts Photography Annual 2020'
+    'Criativos para Meta Ads e Google Ads',
+    'Artes para redes sociais e campanhas',
+    'Landing pages e paginas de captura',
+    'Identidade visual para ofertas digitais',
   ],
   clients: [
-    'Vogue',
-    'The New York Times',
-    'National Geographic',
-    'Adobe',
-    'Apple',
-    'Nike',
-    'Patagonia',
-    'Architectural Digest'
+    'Negocios locais',
+    'Infoprodutores',
+    'Prestadores de servico',
+    'E-commerces',
+    'Lancamentos digitais',
+    'Projetos de automacao e CRM',
   ],
-  education: 'MFA em Fotografia, School of Visual Arts, Nova York',
-  location: 'Nova York, NY',
-  email: 'hello@sarahmitchell.com',
-  phone: '+1 (555) 123-4567',
-  availability: 'Atualmente com agenda aberta para o 2º trimestre de 2025',
+  education: 'Estrategia digital, design de conversao e performance',
+  location: 'Brasil',
+  email: 'contato@xgrowthcompany.com',
+  phone: '+55 (00) 00000-0000',
+  availability: 'Agenda aberta para novos projetos e parcerias',
   socialLinks: {
-    instagram: 'https://instagram.com/sarahmitchellphoto',
-    linkedin: 'https://linkedin.com/in/sarahmitchell',
-    behance: 'https://behance.net/sarahmitchell'
+    instagram: 'https://instagram.com/xgrowthcompany',
+    linkedin: 'https://linkedin.com/company/xgrowthcompany',
+    behance: 'https://behance.net/xgrowthcompany',
   },
-  // Photo by Joshua Sun on Unsplash
-  portraitImage: 'https://images.unsplash.com/photo-1585279968680-6606ee6ed134?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3MDA2OTF8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NjI3Njk1NjB8&ixlib=rb-4.1.0&q=80&w=1080'
+  portraitImage:
+    'https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=1200&q=80',
 };

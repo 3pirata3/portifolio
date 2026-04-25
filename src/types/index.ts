@@ -1,9 +1,9 @@
 /**
- * Core TypeScript interfaces for Frame Portfolio
+ * Core TypeScript interfaces for the Xgrowth portfolio
  * Based on SPECIFICATION.md data model requirements
  */
 
-export type ProjectCategory = 'retratos' | 'paisagens' | 'editorial' | 'arquitetura' | 'documentário';
+export type ProjectCategory = 'ads' | 'social' | 'branding' | 'landing-page' | 'automation';
 
 export type AspectRatio = 'portrait' | 'landscape' | 'square';
 
@@ -24,7 +24,7 @@ export interface Project {
   images: ProjectImage[];
   description: string;
   client?: string;
-  camera?: string;
+  deliverables?: string;
   location?: string;
   slug: string;
 }
@@ -53,7 +53,7 @@ export interface PhotographerInfo {
 export interface ContactSubmission {
   name: string;
   email: string;
-  projectType: 'editorial' | 'commercial' | 'personal';
+  projectType: 'creative' | 'traffic' | 'brand';
   message: string;
   timestamp: Date;
 }

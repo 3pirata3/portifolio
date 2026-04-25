@@ -1,21 +1,20 @@
-import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
-import { ArrowLeft } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { SEOHead } from "@/components/seo/SEOHead";
+import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
+import { ArrowLeft } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { SEOHead } from '@/components/seo/SEOHead';
 
 /**
- * Página 404 (Não Encontrada) com design e animações suaves
- * Oferece navegação clara de volta ao início
+ * 404 page with a clear path back to the portfolio.
  */
 const NotFound = () => {
   return (
     <>
       <SEOHead
-        title="Página Não Encontrada"
-        description="A página que você procura não existe. Volte ao início para continuar navegando."
+        title="Pagina nao encontrada"
+        description="A pagina que voce procura nao existe. Volte ao inicio para continuar navegando."
       />
-      
+
       <main className="min-h-[calc(100vh-8rem)] flex items-center justify-center px-6">
         <motion.div
           className="max-w-2xl w-full text-center space-y-8"
@@ -23,7 +22,6 @@ const NotFound = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          {/* 404 Number */}
           <motion.div
             initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
@@ -34,7 +32,6 @@ const NotFound = () => {
             </h1>
           </motion.div>
 
-          {/* Content */}
           <div className="space-y-4 -mt-8">
             <motion.h2
               className="text-3xl md:text-5xl font-light tracking-wide"
@@ -42,21 +39,19 @@ const NotFound = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.5 }}
             >
-              Página Não Encontrada
+              Pagina nao encontrada
             </motion.h2>
-            
+
             <motion.p
               className="text-base md:text-lg text-muted-foreground font-light leading-relaxed max-w-md mx-auto"
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.5 }}
             >
-              A página que você procura não existe ou foi movida.
-              Vamos te levar de volta ao caminho certo.
+              A pagina que voce procura nao existe ou foi movida. Vamos te levar de volta ao caminho certo.
             </motion.p>
           </div>
 
-          {/* Action Button */}
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
@@ -69,12 +64,11 @@ const NotFound = () => {
             >
               <Link to="/">
                 <ArrowLeft className="mr-2 size-5 transition-transform group-hover:-translate-x-1" />
-                Voltar ao Início
+                Voltar ao Inicio
               </Link>
             </Button>
           </motion.div>
 
-          {/* Decorative Element */}
           <motion.div
             className="pt-12"
             initial={{ opacity: 0 }}

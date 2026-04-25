@@ -22,8 +22,8 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 import { Button } from '@/components/ui/button';
+import { photographerInfo } from '@/data/photographer';
 
-// Schema de validação com boas práticas de segurança
 const contactFormSchema = z.object({
   name: z
     .string()
@@ -33,9 +33,9 @@ const contactFormSchema = z.object({
   email: z
     .string()
     .trim()
-    .email({ message: 'Insira um e-mail válido' })
+    .email({ message: 'Insira um e-mail valido' })
     .max(255, { message: 'O e-mail deve ter menos de 255 caracteres' }),
-  projectType: z.enum(['editorial', 'commercial', 'personal'], {
+  projectType: z.enum(['creative', 'traffic', 'brand'], {
     required_error: 'Selecione um tipo de projeto',
   }),
   message: z
@@ -47,9 +47,14 @@ const contactFormSchema = z.object({
 
 type ContactFormValues = z.infer<typeof contactFormSchema>;
 
+const projectTypeLabels: Record<ContactFormValues['projectType'], string> = {
+  creative: 'Criativos e artes',
+  traffic: 'Campanhas e trafego',
+  brand: 'Identidade e pagina',
+};
+
 /**
- * Componente de formulário de contato com validação e tratamento de erros
- * Usa react-hook-form + zod para validação tipada
+ * Contact form with validation and a mailto fallback.
  */
 export function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -67,40 +72,27 @@ export function ContactForm() {
 
   const onSubmit = async (data: ContactFormValues) => {
     setIsSubmitting(true);
-    
-    try {
-      // Integração com Formspree — substitua YOUR_FORM_ID pelo seu ID real
-      const response = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          name: data.name,
-          email: data.email,
-          projectType: data.projectType,
-          message: data.message,
-          _subject: `Novo contato (${data.projectType}) de ${data.name}`,
-        }),
-      });
 
-      if (!response.ok) {
-        throw new Error('Falha ao enviar a mensagem');
-      }
+    const subject = `Novo contato Xgrowth - ${projectTypeLabels[data.projectType]}`;
+    const body = [
+      `Nome: ${data.name}`,
+      `E-mail: ${data.email}`,
+      `Tipo de projeto: ${projectTypeLabels[data.projectType]}`,
+      '',
+      data.message,
+    ].join('\n');
 
-      setIsSuccess(true);
-      form.reset();
+    window.location.href = `mailto:${photographerInfo.email}?subject=${encodeURIComponent(
+      subject,
+    )}&body=${encodeURIComponent(body)}`;
 
-      setTimeout(() => {
-        setIsSuccess(false);
-      }, 5000);
-    } catch (error) {
-      form.setError('root', {
-        message: 'Não foi possível enviar a mensagem. Tente novamente.',
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
+    setIsSuccess(true);
+    form.reset();
+    setIsSubmitting(false);
+
+    setTimeout(() => {
+      setIsSuccess(false);
+    }, 5000);
   };
 
   if (isSuccess) {
@@ -118,9 +110,9 @@ export function ContactForm() {
         >
           <CheckCircle2 className="size-16 mx-auto text-green-600 dark:text-green-400" />
         </motion.div>
-        <h3 className="text-2xl font-light tracking-wide">Mensagem Enviada!</h3>
+        <h3 className="text-2xl font-light tracking-wide">Mensagem Preparada</h3>
         <p className="text-muted-foreground font-light leading-relaxed">
-          Obrigada pelo contato. Responderei o mais breve possível.
+          Seu aplicativo de e-mail foi aberto com a mensagem para a Xgrowth Company.
         </p>
       </motion.div>
     );
@@ -129,7 +121,6 @@ export function ContactForm() {
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-        {/* Nome */}
         <FormField
           control={form.control}
           name="name"
@@ -150,7 +141,6 @@ export function ContactForm() {
           )}
         />
 
-        {/* E-mail */}
         <FormField
           control={form.control}
           name="email"
@@ -172,7 +162,6 @@ export function ContactForm() {
           )}
         />
 
-        {/* Tipo de projeto */}
         <FormField
           control={form.control}
           name="projectType"
@@ -188,14 +177,14 @@ export function ContactForm() {
                   </SelectTrigger>
                 </FormControl>
                 <SelectContent className="bg-popover z-50">
-                  <SelectItem value="editorial" className="font-light">
-                    Editorial
+                  <SelectItem value="creative" className="font-light">
+                    Criativos e artes
                   </SelectItem>
-                  <SelectItem value="commercial" className="font-light">
-                    Comercial
+                  <SelectItem value="traffic" className="font-light">
+                    Campanhas e trafego
                   </SelectItem>
-                  <SelectItem value="personal" className="font-light">
-                    Pessoal
+                  <SelectItem value="brand" className="font-light">
+                    Identidade e pagina
                   </SelectItem>
                 </SelectContent>
               </Select>
@@ -204,7 +193,6 @@ export function ContactForm() {
           )}
         />
 
-        {/* Mensagem */}
         <FormField
           control={form.control}
           name="message"
@@ -215,7 +203,7 @@ export function ContactForm() {
               </FormLabel>
               <FormControl>
                 <Textarea
-                  placeholder="Conte-me sobre o seu projeto..."
+                  placeholder="Conte sobre sua campanha, oferta ou material que precisa criar..."
                   className="min-h-32 font-light resize-none"
                   {...field}
                 />
@@ -225,14 +213,12 @@ export function ContactForm() {
           )}
         />
 
-        {/* Erro geral */}
         {form.formState.errors.root && (
           <div className="text-sm text-destructive font-light">
             {form.formState.errors.root.message}
           </div>
         )}
 
-        {/* Botão de envio */}
         <Button
           type="submit"
           className="w-full py-6 text-base font-light tracking-wide"
@@ -241,10 +227,10 @@ export function ContactForm() {
           {isSubmitting ? (
             <>
               <Loader2 className="mr-2 size-5 animate-spin" />
-              Enviando...
+              Preparando...
             </>
           ) : (
-            'Enviar Mensagem'
+            'Preparar Mensagem'
           )}
         </Button>
       </form>

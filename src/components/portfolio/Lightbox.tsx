@@ -4,7 +4,6 @@ import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Dialog, DialogContent } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 import type { ProjectImage } from '@/types';
-import { cn } from '@/lib/utils';
 
 interface LightboxProps {
   images: ProjectImage[];
@@ -15,15 +14,14 @@ interface LightboxProps {
 }
 
 /**
- * Full-screen lightbox component with keyboard and touch navigation
- * Features: arrow navigation, image counter, ESC to close, swipe gestures
+ * Full-screen lightbox component with keyboard and touch navigation.
  */
-export function Lightbox({ 
-  images, 
-  currentIndex, 
-  isOpen, 
-  onClose, 
-  onNavigate 
+export function Lightbox({
+  images,
+  currentIndex,
+  isOpen,
+  onClose,
+  onNavigate,
 }: LightboxProps) {
   const [touchStart, setTouchStart] = useState(0);
   const [touchEnd, setTouchEnd] = useState(0);
@@ -31,16 +29,27 @@ export function Lightbox({
   const currentImage = images[currentIndex];
   const totalImages = images.length;
 
-  // Keyboard navigation
+  const handlePrevious = () => {
+    if (currentIndex > 0) {
+      onNavigate(currentIndex - 1);
+    }
+  };
+
+  const handleNext = () => {
+    if (currentIndex < totalImages - 1) {
+      onNavigate(currentIndex + 1);
+    }
+  };
+
   useEffect(() => {
     if (!isOpen) return;
 
-    const handleKeyPress = (e: KeyboardEvent) => {
-      if (e.key === 'ArrowLeft') {
+    const handleKeyPress = (event: KeyboardEvent) => {
+      if (event.key === 'ArrowLeft') {
         handlePrevious();
-      } else if (e.key === 'ArrowRight') {
+      } else if (event.key === 'ArrowRight') {
         handleNext();
-      } else if (e.key === 'Escape') {
+      } else if (event.key === 'Escape') {
         onClose();
       }
     };
@@ -49,18 +58,17 @@ export function Lightbox({
     return () => window.removeEventListener('keydown', handleKeyPress);
   }, [isOpen, currentIndex]);
 
-  // Touch gesture handlers
-  const handleTouchStart = (e: React.TouchEvent) => {
-    setTouchStart(e.targetTouches[0].clientX);
+  const handleTouchStart = (event: React.TouchEvent) => {
+    setTouchStart(event.targetTouches[0].clientX);
   };
 
-  const handleTouchMove = (e: React.TouchEvent) => {
-    setTouchEnd(e.targetTouches[0].clientX);
+  const handleTouchMove = (event: React.TouchEvent) => {
+    setTouchEnd(event.targetTouches[0].clientX);
   };
 
   const handleTouchEnd = () => {
     if (!touchStart || !touchEnd) return;
-    
+
     const distance = touchStart - touchEnd;
     const isLeftSwipe = distance > 50;
     const isRightSwipe = distance < -50;
@@ -75,44 +83,29 @@ export function Lightbox({
     setTouchEnd(0);
   };
 
-  const handlePrevious = () => {
-    if (currentIndex > 0) {
-      onNavigate(currentIndex - 1);
-    }
-  };
-
-  const handleNext = () => {
-    if (currentIndex < totalImages - 1) {
-      onNavigate(currentIndex + 1);
-    }
-  };
-
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent 
+      <DialogContent
         className="max-w-screen max-h-screen w-screen h-screen p-0 bg-black/95 border-none [&>button]:hidden"
-        onInteractOutside={(e) => e.preventDefault()}
+        onInteractOutside={(event) => event.preventDefault()}
       >
         <div className="relative w-full h-full flex items-center justify-center">
-          {/* Close Button */}
           <Button
             variant="ghost"
             size="icon"
             onClick={onClose}
             className="absolute top-4 right-4 z-50 size-10 text-white hover:bg-white/10 rounded-full"
-            aria-label="Fechar visualização"
+            aria-label="Fechar visualizacao"
           >
             <X className="size-6" />
           </Button>
 
-          {/* Image Counter */}
           <div className="absolute top-4 left-4 z-50 px-4 py-2 rounded-full bg-black/50 backdrop-blur-sm">
             <span className="text-white text-sm font-light tracking-wide">
               {currentIndex + 1} / {totalImages}
             </span>
           </div>
 
-          {/* Previous Button */}
           {currentIndex > 0 && (
             <Button
               variant="ghost"
@@ -125,20 +118,18 @@ export function Lightbox({
             </Button>
           )}
 
-          {/* Next Button */}
           {currentIndex < totalImages - 1 && (
             <Button
               variant="ghost"
               size="icon"
               onClick={handleNext}
               className="absolute right-4 z-50 size-12 text-white hover:bg-white/10 rounded-full"
-              aria-label="Próxima imagem"
+              aria-label="Proxima imagem"
             >
               <ChevronRight className="size-8" />
             </Button>
           )}
 
-          {/* Image with swipe support */}
           <div
             className="relative w-full h-full flex items-center justify-center px-4 md:px-16"
             onTouchStart={handleTouchStart}
@@ -160,7 +151,6 @@ export function Lightbox({
             </AnimatePresence>
           </div>
 
-          {/* Caption */}
           {currentImage.caption && (
             <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-50 max-w-2xl px-6">
               <motion.p
