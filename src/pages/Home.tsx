@@ -98,7 +98,7 @@ export default function Home() {
             <ScrollReveal>
               <div className="space-y-6">
             <h2 className="text-3xl md:text-4xl font-light tracking-wide">
-              About My Work
+              Sobre Meu Trabalho
             </h2>
             <div className="space-y-4 text-lg font-light leading-relaxed text-muted-foreground">
               <p>
@@ -109,7 +109,7 @@ export default function Home() {
                   to="/about"
                   className="inline-flex items-center gap-2 text-base font-light tracking-wide text-foreground hover:text-muted-foreground transition-colors group"
                 >
-                  <span>Learn More About Me</span>
+                  <span>Saiba Mais Sobre Mim</span>
                   <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
                 </Link>
               </div>
@@ -123,10 +123,10 @@ export default function Home() {
           <ScrollReveal>
             <div className="text-center mb-16 space-y-4 px-6">
               <h2 className="text-4xl md:text-5xl font-light tracking-wide">
-                Featured Projects
+                Projetos em Destaque
               </h2>
               <p className="text-lg text-muted-foreground font-light tracking-wide">
-                A selection of recent work
+                Uma seleção de trabalhos recentes
               </p>
             </div>
           </ScrollReveal>
@@ -151,7 +151,7 @@ export default function Home() {
                 to="/portfolio"
                 className="group inline-flex items-center gap-2 text-lg font-light tracking-wide text-foreground hover:text-muted-foreground transition-colors"
               >
-                <span>View All Projects</span>
+                <span>Ver Todos os Projetos</span>
                 <ArrowRight className="size-5 transition-transform group-hover:translate-x-1" />
               </Link>
             </div>

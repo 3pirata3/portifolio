@@ -13,8 +13,8 @@ export default function Contact() {
   return (
     <>
       <SEOHead
-        title="Contact"
-        description={`Get in touch with ${photographerInfo.name} for photography inquiries, collaborations, and project bookings. ${photographerInfo.availability}`}
+        title="Contato"
+        description={`Entre em contato com ${photographerInfo.name} para projetos fotográficos, colaborações e orçamentos. ${photographerInfo.availability}`}
       />
       
       <div className="min-h-screen">
@@ -27,10 +27,10 @@ export default function Contact() {
             transition={{ duration: 0.4 }}
           >
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-light tracking-wide mb-4">
-              Get in Touch
+              Entre em Contato
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground font-light tracking-wide">
-              Let's discuss your next project
+              Vamos conversar sobre seu próximo projeto
             </p>
           </motion.div>
         </div>
@@ -49,10 +49,10 @@ export default function Contact() {
             >
               <div className="space-y-3">
                 <h2 className="text-3xl md:text-4xl font-light tracking-wide">
-                  Send a Message
+                  Envie uma Mensagem
                 </h2>
                 <p className="text-muted-foreground font-light">
-                  Fill out the form below and I'll get back to you within 24-48 hours. {photographerInfo.availability}
+                  Preencha o formulário abaixo e responderei em até 24–48 horas. {photographerInfo.availability}
                 </p>
               </div>
 
@@ -68,10 +68,10 @@ export default function Contact() {
             >
               <div className="space-y-3">
                 <h2 className="text-3xl md:text-4xl font-light tracking-wide">
-                  Contact Information
+                  Informações de Contato
                 </h2>
                 <p className="text-muted-foreground font-light">
-                  Prefer to reach out directly? Here's how you can contact me.
+                  Prefere falar diretamente? Veja como me encontrar.
                 </p>
               </div>
 
@@ -86,7 +86,7 @@ export default function Contact() {
                   </div>
                   <div className="space-y-1">
                     <p className="text-sm font-light tracking-wide text-muted-foreground">
-                      Email
+                      E-mail
                     </p>
                     <a
                       href={`mailto:${photographerInfo.email}`}
@@ -104,7 +104,7 @@ export default function Contact() {
                   </div>
                   <div className="space-y-1">
                     <p className="text-sm font-light tracking-wide text-muted-foreground">
-                      Phone
+                      Telefone
                     </p>
                     <a
                       href={`tel:${photographerInfo.phone}`}
@@ -122,7 +122,7 @@ export default function Contact() {
                   </div>
                   <div className="space-y-1">
                     <p className="text-sm font-light tracking-wide text-muted-foreground">
-                      Location
+                      Localização
                     </p>
                     <p className="text-base md:text-lg font-light">
                       {photographerInfo.location}

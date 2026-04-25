@@ -2,18 +2,18 @@ import type { PhotographerInfo } from '@/types';
 
 export const photographerInfo: PhotographerInfo = {
   name: 'Sarah Mitchell',
-  tagline: 'Editorial & Commercial Photographer',
-  heroIntroduction: 'Creating visual narratives that capture authentic moments and timeless stories.',
-  biography: `Sarah Mitchell is an award-winning photographer specializing in editorial and commercial work, with recognition including the International Photography Awards Editorial Photographer of the Year 2023 and PDN Photo Annual Winner 2022. With over a decade of experience, her work has been featured in numerous international publications and exhibitions, collaborating with clients such as Vogue, The New York Times, National Geographic, Adobe, Apple, Nike, and Architectural Digest.
+  tagline: 'Fotógrafa Editorial e Comercial',
+  heroIntroduction: 'Criando narrativas visuais que capturam momentos autênticos e histórias atemporais.',
+  biography: `Sarah Mitchell é uma fotógrafa premiada, especializada em trabalhos editoriais e comerciais, com reconhecimentos como Fotógrafa Editorial do Ano 2023 pelo International Photography Awards e Vencedora do PDN Photo Annual 2022. Com mais de uma década de experiência, seu trabalho foi destaque em diversas publicações e exposições internacionais, em colaborações com clientes como Vogue, The New York Times, National Geographic, Adobe, Apple, Nike e Architectural Digest.
 
-Based in New York with an MFA in Photography from the School of Visual Arts, Sarah brings a unique perspective to every project, combining technical excellence with artistic vision. Her approach to photography is deeply rooted in storytelling, believing that every image should convey emotion and meaning beyond its visual appeal.`,
-  approach: `My photography is guided by three principles: authenticity, composition, and light. I believe the best images emerge when subjects feel comfortable and genuine, when composition guides the viewer's eye naturally, and when light reveals the essence of the moment.
+Baseada em Nova York, com mestrado (MFA) em Fotografia pela School of Visual Arts, Sarah traz uma perspectiva única para cada projeto, unindo excelência técnica e visão artística. Sua abordagem fotográfica é profundamente enraizada na narrativa, acreditando que cada imagem deve transmitir emoção e significado além do apelo visual.`,
+  approach: `Minha fotografia é guiada por três princípios: autenticidade, composição e luz. Acredito que as melhores imagens nascem quando os retratados se sentem confortáveis e genuínos, quando a composição conduz o olhar de forma natural, e quando a luz revela a essência do momento.
 
-Whether working on editorial assignments or commercial projects, I strive to create images that transcend their immediate purpose and become lasting visual statements.`,
+Seja em assignments editoriais ou projetos comerciais, busco criar imagens que transcendem o propósito imediato e se tornam declarações visuais duradouras.`,
   awards: [
-    'International Photography Awards - Editorial Photographer of the Year 2023',
-    'PDN Photo Annual - Winner 2022',
-    'Hasselblad Masters Finalist 2021',
+    'International Photography Awards — Fotógrafa Editorial do Ano 2023',
+    'PDN Photo Annual — Vencedora 2022',
+    'Hasselblad Masters — Finalista 2021',
     'Communication Arts Photography Annual 2020'
   ],
   clients: [
@@ -26,11 +26,11 @@ Whether working on editorial assignments or commercial projects, I strive to cre
     'Patagonia',
     'Architectural Digest'
   ],
-  education: 'MFA Photography, School of Visual Arts, New York',
-  location: 'New York, NY',
+  education: 'MFA em Fotografia, School of Visual Arts, Nova York',
+  location: 'Nova York, NY',
   email: 'hello@sarahmitchell.com',
   phone: '+1 (555) 123-4567',
-  availability: 'Currently booking for Q2 2025',
+  availability: 'Atualmente com agenda aberta para o 2º trimestre de 2025',
   socialLinks: {
     instagram: 'https://instagram.com/sarahmitchellphoto',
     linkedin: 'https://linkedin.com/in/sarahmitchell',

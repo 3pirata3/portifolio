@@ -23,33 +23,33 @@ import {
 } from '@/components/ui/select';
 import { Button } from '@/components/ui/button';
 
-// Validation schema with security best practices
+// Schema de validação com boas práticas de segurança
 const contactFormSchema = z.object({
   name: z
     .string()
     .trim()
-    .min(2, { message: 'Name must be at least 2 characters' })
-    .max(100, { message: 'Name must be less than 100 characters' }),
+    .min(2, { message: 'O nome deve ter pelo menos 2 caracteres' })
+    .max(100, { message: 'O nome deve ter menos de 100 caracteres' }),
   email: z
     .string()
     .trim()
-    .email({ message: 'Please enter a valid email address' })
-    .max(255, { message: 'Email must be less than 255 characters' }),
+    .email({ message: 'Insira um e-mail válido' })
+    .max(255, { message: 'O e-mail deve ter menos de 255 caracteres' }),
   projectType: z.enum(['editorial', 'commercial', 'personal'], {
-    required_error: 'Please select a project type',
+    required_error: 'Selecione um tipo de projeto',
   }),
   message: z
     .string()
     .trim()
-    .min(10, { message: 'Message must be at least 10 characters' })
-    .max(1000, { message: 'Message must be less than 1000 characters' }),
+    .min(10, { message: 'A mensagem deve ter pelo menos 10 caracteres' })
+    .max(1000, { message: 'A mensagem deve ter menos de 1000 caracteres' }),
 });
 
 type ContactFormValues = z.infer<typeof contactFormSchema>;
 
 /**
- * Contact form component with validation and error handling
- * Uses react-hook-form + zod for type-safe validation
+ * Componente de formulário de contato com validação e tratamento de erros
+ * Usa react-hook-form + zod para validação tipada
  */
 export function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -69,7 +69,7 @@ export function ContactForm() {
     setIsSubmitting(true);
     
     try {
-      // Formspree integration - replace YOUR_FORM_ID with your actual form ID
+      // Integração com Formspree — substitua YOUR_FORM_ID pelo seu ID real
       const response = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
         method: 'POST',
         headers: {
@@ -80,32 +80,29 @@ export function ContactForm() {
           email: data.email,
           projectType: data.projectType,
           message: data.message,
-          _subject: `New ${data.projectType} inquiry from ${data.name}`,
+          _subject: `Novo contato (${data.projectType}) de ${data.name}`,
         }),
       });
 
       if (!response.ok) {
-        throw new Error('Failed to send message');
+        throw new Error('Falha ao enviar a mensagem');
       }
 
-      // Show success state
       setIsSuccess(true);
       form.reset();
 
-      // Reset success message after 5 seconds
       setTimeout(() => {
         setIsSuccess(false);
       }, 5000);
     } catch (error) {
       form.setError('root', {
-        message: 'Failed to send message. Please try again.',
+        message: 'Não foi possível enviar a mensagem. Tente novamente.',
       });
     } finally {
       setIsSubmitting(false);
     }
   };
 
-  // Show success message
   if (isSuccess) {
     return (
       <motion.div
@@ -121,9 +118,9 @@ export function ContactForm() {
         >
           <CheckCircle2 className="size-16 mx-auto text-green-600 dark:text-green-400" />
         </motion.div>
-        <h3 className="text-2xl font-light tracking-wide">Message Sent!</h3>
+        <h3 className="text-2xl font-light tracking-wide">Mensagem Enviada!</h3>
         <p className="text-muted-foreground font-light leading-relaxed">
-          Thank you for reaching out. I'll get back to you as soon as possible.
+          Obrigada pelo contato. Responderei o mais breve possível.
         </p>
       </motion.div>
     );
@@ -132,18 +129,18 @@ export function ContactForm() {
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-        {/* Name Field */}
+        {/* Nome */}
         <FormField
           control={form.control}
           name="name"
           render={({ field }) => (
             <FormItem>
               <FormLabel className="text-sm font-light tracking-wide">
-                Name
+                Nome
               </FormLabel>
               <FormControl>
                 <Input
-                  placeholder="Your full name"
+                  placeholder="Seu nome completo"
                   className="font-light"
                   {...field}
                 />
@@ -153,19 +150,19 @@ export function ContactForm() {
           )}
         />
 
-        {/* Email Field */}
+        {/* E-mail */}
         <FormField
           control={form.control}
           name="email"
           render={({ field }) => (
             <FormItem>
               <FormLabel className="text-sm font-light tracking-wide">
-                Email
+                E-mail
               </FormLabel>
               <FormControl>
                 <Input
                   type="email"
-                  placeholder="your.email@example.com"
+                  placeholder="seu.email@exemplo.com"
                   className="font-light"
                   {...field}
                 />
@@ -175,19 +172,19 @@ export function ContactForm() {
           )}
         />
 
-        {/* Project Type Select */}
+        {/* Tipo de projeto */}
         <FormField
           control={form.control}
           name="projectType"
           render={({ field }) => (
             <FormItem>
               <FormLabel className="text-sm font-light tracking-wide">
-                Project Type
+                Tipo de Projeto
               </FormLabel>
               <Select onValueChange={field.onChange} defaultValue={field.value}>
                 <FormControl>
                   <SelectTrigger className="font-light">
-                    <SelectValue placeholder="Select project type" />
+                    <SelectValue placeholder="Selecione o tipo de projeto" />
                   </SelectTrigger>
                 </FormControl>
                 <SelectContent className="bg-popover z-50">
@@ -195,10 +192,10 @@ export function ContactForm() {
                     Editorial
                   </SelectItem>
                   <SelectItem value="commercial" className="font-light">
-                    Commercial
+                    Comercial
                   </SelectItem>
                   <SelectItem value="personal" className="font-light">
-                    Personal
+                    Pessoal
                   </SelectItem>
                 </SelectContent>
               </Select>
@@ -207,18 +204,18 @@ export function ContactForm() {
           )}
         />
 
-        {/* Message Textarea */}
+        {/* Mensagem */}
         <FormField
           control={form.control}
           name="message"
           render={({ field }) => (
             <FormItem>
               <FormLabel className="text-sm font-light tracking-wide">
-                Message
+                Mensagem
               </FormLabel>
               <FormControl>
                 <Textarea
-                  placeholder="Tell me about your project..."
+                  placeholder="Conte-me sobre o seu projeto..."
                   className="min-h-32 font-light resize-none"
                   {...field}
                 />
@@ -228,14 +225,14 @@ export function ContactForm() {
           )}
         />
 
-        {/* Root Error Message */}
+        {/* Erro geral */}
         {form.formState.errors.root && (
           <div className="text-sm text-destructive font-light">
             {form.formState.errors.root.message}
           </div>
         )}
 
-        {/* Submit Button */}
+        {/* Botão de envio */}
         <Button
           type="submit"
           className="w-full py-6 text-base font-light tracking-wide"
@@ -244,10 +241,10 @@ export function ContactForm() {
           {isSubmitting ? (
             <>
               <Loader2 className="mr-2 size-5 animate-spin" />
-              Sending...
+              Enviando...
             </>
           ) : (
-            'Send Message'
+            'Enviar Mensagem'
           )}
         </Button>
       </form>

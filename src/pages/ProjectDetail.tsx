@@ -111,7 +111,7 @@ export default function ProjectDetail() {
               <div className="space-y-2">
                 <div className="flex items-center gap-2 text-sm font-light tracking-wide uppercase text-muted-foreground">
                   <Camera className="size-4" />
-                  <span>Camera</span>
+                  <span>Câmera</span>
                 </div>
                 <p className="font-light text-foreground">{project.camera}</p>
               </div>
@@ -120,7 +120,7 @@ export default function ProjectDetail() {
               <div className="space-y-2">
                 <div className="flex items-center gap-2 text-sm font-light tracking-wide uppercase text-muted-foreground">
                   <User className="size-4" />
-                  <span>Client</span>
+                  <span>Cliente</span>
                 </div>
                 <p className="font-light text-foreground">{project.client}</p>
               </div>

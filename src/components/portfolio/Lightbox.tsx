@@ -100,7 +100,7 @@ export function Lightbox({
             size="icon"
             onClick={onClose}
             className="absolute top-4 right-4 z-50 size-10 text-white hover:bg-white/10 rounded-full"
-            aria-label="Close lightbox"
+            aria-label="Fechar visualização"
           >
             <X className="size-6" />
           </Button>
@@ -119,7 +119,7 @@ export function Lightbox({
               size="icon"
               onClick={handlePrevious}
               className="absolute left-4 z-50 size-12 text-white hover:bg-white/10 rounded-full"
-              aria-label="Previous image"
+              aria-label="Imagem anterior"
             >
               <ChevronLeft className="size-8" />
             </Button>
@@ -132,7 +132,7 @@ export function Lightbox({
               size="icon"
               onClick={handleNext}
               className="absolute right-4 z-50 size-12 text-white hover:bg-white/10 rounded-full"
-              aria-label="Next image"
+              aria-label="Próxima imagem"
             >
               <ChevronRight className="size-8" />
             </Button>

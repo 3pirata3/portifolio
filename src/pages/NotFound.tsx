@@ -5,15 +5,15 @@ import { Button } from "@/components/ui/button";
 import { SEOHead } from "@/components/seo/SEOHead";
 
 /**
- * 404 Not Found page with branded design and smooth animations
- * Provides clear navigation back to home
+ * Página 404 (Não Encontrada) com design e animações suaves
+ * Oferece navegação clara de volta ao início
  */
 const NotFound = () => {
   return (
     <>
       <SEOHead
-        title="Page Not Found"
-        description="The page you're looking for doesn't exist. Return to the homepage to continue browsing."
+        title="Página Não Encontrada"
+        description="A página que você procura não existe. Volte ao início para continuar navegando."
       />
       
       <main className="min-h-[calc(100vh-8rem)] flex items-center justify-center px-6">
@@ -42,7 +42,7 @@ const NotFound = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.5 }}
             >
-              Page Not Found
+              Página Não Encontrada
             </motion.h2>
             
             <motion.p
@@ -51,8 +51,8 @@ const NotFound = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.5 }}
             >
-              The page you're looking for doesn't exist or has been moved.
-              Let's get you back on track.
+              A página que você procura não existe ou foi movida.
+              Vamos te levar de volta ao caminho certo.
             </motion.p>
           </div>
 
@@ -69,7 +69,7 @@ const NotFound = () => {
             >
               <Link to="/">
                 <ArrowLeft className="mr-2 size-5 transition-transform group-hover:-translate-x-1" />
-                Return to Home
+                Voltar ao Início
               </Link>
             </Button>
           </motion.div>

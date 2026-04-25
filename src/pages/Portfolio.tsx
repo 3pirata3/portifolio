@@ -12,8 +12,8 @@ export default function Portfolio() {
   return (
     <>
       <SEOHead 
-        title="Portfolio"
-        description="Browse my complete photography portfolio featuring portraits, landscapes, editorial work, architecture, and documentary projects."
+        title="Portfólio"
+        description="Conheça meu portfólio completo de fotografia, com retratos, paisagens, trabalhos editoriais, arquitetura e ensaios documentais."
       />
       
       <div className="min-h-screen">
@@ -26,10 +26,10 @@ export default function Portfolio() {
             transition={{ duration: 0.8 }}
           >
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-light tracking-wide mb-4">
-              Portfolio
+              Portfólio
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground font-light tracking-wide max-w-2xl mx-auto">
-              A curated collection of photography spanning diverse subjects and styles
+              Uma coleção curada de fotografias abrangendo diversos temas e estilos
             </p>
           </motion.div>
         </div>
