@@ -88,18 +88,22 @@ export default function Home() {
               alt="Profissional XGrowth Company em apresentacao de campanhas"
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/35 to-black/75" />
+            <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/45 to-black/80" />
           </div>
 
           <div className="relative h-full flex flex-col items-center justify-center px-6">
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute left-1/2 top-1/2 h-[34rem] w-[76rem] max-w-[96vw] -translate-x-1/2 -translate-y-1/2 rounded-full bg-black/55 blur-3xl"
+            />
             <motion.div
-              className="text-center space-y-6 max-w-5xl"
+              className="relative z-10 text-center space-y-6 max-w-5xl"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, ease: 'easeOut' }}
             >
               <motion.h1
-                className="text-5xl md:text-7xl lg:text-8xl font-extralight tracking-wide text-white"
+                className="text-5xl md:text-7xl lg:text-8xl font-extralight tracking-wide text-white drop-shadow-[0_4px_22px_rgba(0,0,0,0.95)]"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1, delay: 0.2 }}
@@ -108,7 +112,7 @@ export default function Home() {
               </motion.h1>
 
               <motion.p
-                className="text-xl md:text-2xl font-light tracking-wide text-white/90"
+                className="text-xl md:text-2xl font-light tracking-wide text-white drop-shadow-[0_3px_16px_rgba(0,0,0,0.95)]"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1, delay: 0.4 }}
@@ -117,7 +121,7 @@ export default function Home() {
               </motion.p>
 
               <motion.p
-                className="text-base md:text-lg font-light leading-relaxed text-white/80 max-w-2xl mx-auto"
+                className="text-base md:text-lg font-light leading-relaxed text-white/95 max-w-2xl mx-auto drop-shadow-[0_3px_14px_rgba(0,0,0,0.95)]"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1, delay: 0.6 }}
