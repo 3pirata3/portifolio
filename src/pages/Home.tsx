@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import heroImage from '@/assets/hero-xgrowth.png';
 import { photographerInfo } from '@/data/photographer';
 import { getFeaturedProjects } from '@/data/projects';
 import { ProjectCard } from '@/components/portfolio/ProjectCard';
@@ -23,8 +24,8 @@ export default function Home() {
         <section className="relative h-screen w-full overflow-hidden">
           <div className="absolute inset-0">
             <img
-              src="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=1800&q=80"
-              alt="Equipe trabalhando em estrategia digital"
+              src={heroImage}
+              alt="Profissional Xgrowth Company em ambiente de trabalho"
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/20 to-black/70" />
