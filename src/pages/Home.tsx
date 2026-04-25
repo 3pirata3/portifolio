@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import heroImage from '@/assets/hero-xgrowth.png';
+import strategyKingImage from '@/assets/strategy-king.png';
 import teamImage from '@/assets/team-xgrowth.png';
 import { photographerInfo } from '@/data/photographer';
 import { getFeaturedProjects } from '@/data/projects';
@@ -191,6 +192,59 @@ export default function Home() {
                 </ScrollReveal>
               ))}
             </div>
+          </div>
+        </section>
+
+        <section className="relative overflow-hidden border-t border-border bg-black px-6 py-24 text-white md:py-32 lg:px-8">
+          <div
+            aria-hidden="true"
+            className="absolute inset-0 bg-[radial-gradient(circle_at_78%_50%,rgba(255,122,0,0.24),transparent_34%),linear-gradient(90deg,rgba(0,0,0,0.96),rgba(0,0,0,0.72)_50%,rgba(0,0,0,0.42))]"
+          />
+          <img
+            src={strategyKingImage}
+            alt=""
+            aria-hidden="true"
+            className="pointer-events-none absolute -right-28 bottom-0 h-[82%] object-contain opacity-25 sm:-right-20 lg:-right-10 lg:h-[92%] lg:max-h-[780px] lg:opacity-75"
+            loading="lazy"
+          />
+
+          <div className="relative z-10 mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.92fr_1.08fr] lg:items-center">
+            <ScrollReveal>
+              <div className="space-y-6">
+                <p className="text-sm uppercase tracking-[0.3em] text-[#FF7A00]">
+                  Estrategia antes da escala
+                </p>
+                <h2 className="max-w-3xl text-3xl font-light tracking-wide md:text-5xl">
+                  Crescimento previsivel nao nasce de tentativa. Nasce de comando.
+                </h2>
+                <p className="max-w-2xl text-lg font-light leading-relaxed text-white/72">
+                  Cada campanha precisa responder a uma estrategia maior: qual oferta vender, para quem,
+                  em qual etapa do funil e com qual processo comercial depois do lead.
+                </p>
+                <a
+                  href="#lead-capture"
+                  className="inline-flex h-12 items-center justify-center rounded-sm bg-[#FF7A00] px-7 text-base font-light tracking-wide text-white transition-colors hover:bg-[#e86f00]"
+                >
+                  Quero estruturar meu crescimento
+                </a>
+              </div>
+            </ScrollReveal>
+
+            <ScrollReveal delay={0.2}>
+              <div className="grid gap-4 sm:grid-cols-3 lg:pl-12">
+                {[
+                  ['Diagnostico', 'Encontramos os gargalos antes de investir mais.'],
+                  ['Direcao', 'Definimos oferta, mensagem, funil e prioridades.'],
+                  ['Controle', 'Medimos cada etapa para escalar com previsibilidade.'],
+                ].map(([title, description]) => (
+                  <div key={title} className="border border-white/14 bg-white/[0.06] p-5 backdrop-blur-sm">
+                    <div className="mb-6 h-px w-10 bg-[#FF7A00]" />
+                    <h3 className="mb-3 text-xl font-light tracking-wide">{title}</h3>
+                    <p className="text-sm font-light leading-relaxed text-white/66">{description}</p>
+                  </div>
+                ))}
+              </div>
+            </ScrollReveal>
           </div>
         </section>
 
