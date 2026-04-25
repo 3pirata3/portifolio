@@ -1,7 +1,9 @@
 import { motion } from 'framer-motion';
 import heroImage from '@/assets/hero-xgrowth.png';
+import teamImage from '@/assets/team-xgrowth.png';
 import { photographerInfo } from '@/data/photographer';
 import { getFeaturedProjects } from '@/data/projects';
+import { LeadCaptureForm } from '@/components/forms/LeadCaptureForm';
 import { ProjectCard } from '@/components/portfolio/ProjectCard';
 import { ScrollIndicator } from '@/components/ui/ScrollIndicator';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
@@ -122,6 +124,26 @@ export default function Home() {
               >
                 {photographerInfo.heroIntroduction}
               </motion.p>
+
+              <motion.div
+                className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-4"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1, delay: 0.8 }}
+              >
+                <a
+                  href="#lead-capture"
+                  className="inline-flex h-12 items-center justify-center rounded-sm bg-[#FF7A00] px-7 text-base font-light tracking-wide text-white transition-colors hover:bg-[#e86f00]"
+                >
+                  Quero diagnosticar meu negocio
+                </a>
+                <Link
+                  to="/portfolio"
+                  className="inline-flex h-12 items-center justify-center rounded-sm border border-white/40 px-7 text-base font-light tracking-wide text-white transition-colors hover:bg-white/10"
+                >
+                  Ver resultados
+                </Link>
+              </motion.div>
             </motion.div>
 
             <motion.div
@@ -139,7 +161,7 @@ export default function Home() {
           <div className="max-w-7xl mx-auto space-y-16">
             <ScrollReveal>
               <div className="max-w-4xl mx-auto text-center space-y-6">
-                <p className="text-sm uppercase tracking-[0.3em] text-muted-foreground">
+                <p className="text-sm uppercase tracking-[0.3em] text-[#FF7A00]">
                   Sistema comercial completo
                 </p>
                 <h2 className="text-3xl md:text-5xl font-light tracking-wide">
@@ -155,9 +177,9 @@ export default function Home() {
             <div className="grid md:grid-cols-3 gap-4 md:gap-6">
               {growthPillars.map(({ title, description, Icon }, index) => (
                 <ScrollReveal key={title} delay={index * 0.1}>
-                  <div className="h-full border border-border rounded-sm p-6 md:p-8 bg-background">
-                    <div className="size-11 rounded-sm bg-accent flex items-center justify-center mb-8">
-                      <Icon className="size-5 text-foreground" />
+                  <div className="h-full border border-border rounded-sm p-6 md:p-8 bg-background transition-colors hover:border-[#FF7A00]/50">
+                    <div className="size-11 rounded-sm bg-[#FF7A00]/10 flex items-center justify-center mb-8">
+                      <Icon className="size-5 text-[#FF7A00]" />
                     </div>
                     <h3 className="text-2xl font-light tracking-wide mb-4">{title}</h3>
                     <p className="text-muted-foreground font-light leading-relaxed">{description}</p>
@@ -169,11 +191,53 @@ export default function Home() {
         </section>
 
         <section className="py-24 md:py-32 px-6 lg:px-8 border-t border-border">
+          <div className="max-w-7xl mx-auto grid lg:grid-cols-[1.08fr_0.92fr] gap-12 lg:gap-16 items-center">
+            <ScrollReveal>
+              <div className="relative overflow-hidden rounded-sm bg-muted">
+                <img
+                  src={teamImage}
+                  alt="Equipe XGrowth analisando campanhas e metricas de performance"
+                  className="w-full aspect-[16/10] object-cover"
+                  loading="lazy"
+                />
+                <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/55 to-transparent" />
+                <div className="absolute left-5 bottom-5 rounded-sm bg-black/55 px-4 py-2 text-sm font-light tracking-wide text-white backdrop-blur-sm">
+                  Equipe XGrowth em analise de performance
+                </div>
+              </div>
+            </ScrollReveal>
+
+            <ScrollReveal delay={0.2}>
+              <div className="space-y-6">
+                <p className="text-sm uppercase tracking-[0.3em] text-[#FF7A00]">
+                  Time e processo
+                </p>
+                <h2 className="text-3xl md:text-5xl font-light tracking-wide">
+                  Campanhas analisadas com olhar de vendas, nao so de midia
+                </h2>
+                <p className="text-lg text-muted-foreground font-light leading-relaxed">
+                  Nossa equipe olha para criativos, metricas, oferta, atendimento e retencao no mesmo
+                  processo. Assim, cada campanha deixa de ser uma acao isolada e vira parte de um sistema
+                  previsivel de crescimento.
+                </p>
+                <a
+                  href="#lead-capture"
+                  className="inline-flex items-center gap-2 text-base font-light tracking-wide text-foreground hover:text-[#FF7A00] transition-colors group"
+                >
+                  <span>Quero entender meu potencial oculto</span>
+                  <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
+                </a>
+              </div>
+            </ScrollReveal>
+          </div>
+        </section>
+
+        <section className="py-24 md:py-32 px-6 lg:px-8 border-t border-border">
           <div className="max-w-7xl mx-auto grid lg:grid-cols-[0.95fr_1.05fr] gap-12 lg:gap-16 items-center">
             <ScrollReveal>
               <div className="space-y-8">
                 <div className="space-y-5">
-                  <p className="text-sm uppercase tracking-[0.3em] text-muted-foreground">
+                  <p className="text-sm uppercase tracking-[0.3em] text-[#FF7A00]">
                     Por que Iceberg?
                   </p>
                   <h2 className="text-3xl md:text-5xl font-light tracking-wide">
@@ -190,14 +254,14 @@ export default function Home() {
                   <div className="grid gap-3">
                     {xgrowthDifference.map((item) => (
                       <div key={item} className="flex items-start gap-3">
-                        <CheckCircle2 className="size-5 mt-0.5 text-foreground" />
+                        <CheckCircle2 className="size-5 mt-0.5 text-[#FF7A00]" />
                         <span className="text-muted-foreground font-light">{item}</span>
                       </div>
                     ))}
                   </div>
                 </div>
 
-                <blockquote className="border-l border-foreground pl-6 text-xl md:text-2xl font-light leading-relaxed">
+                <blockquote className="border-l border-[#FF7A00] pl-6 text-xl md:text-2xl font-light leading-relaxed">
                   Revelamos e exploramos as oportunidades ocultas para gerar resultados extraordinarios.
                 </blockquote>
               </div>
@@ -208,14 +272,14 @@ export default function Home() {
                 <div className="space-y-6">
                   <div className="flex items-center justify-between gap-6">
                     <div>
-                      <p className="text-sm uppercase tracking-[0.24em] text-muted-foreground">
+                      <p className="text-sm uppercase tracking-[0.24em] text-[#FF7A00]">
                         Funil Iceberg
                       </p>
                       <h3 className="text-2xl md:text-3xl font-light tracking-wide mt-2">
                         Metodologia XGrowth
                       </h3>
                     </div>
-                    <BarChart3 className="size-10 text-muted-foreground" />
+                    <BarChart3 className="size-10 text-[#FF7A00]" />
                   </div>
 
                   <div className="space-y-3">
@@ -232,7 +296,7 @@ export default function Home() {
                           <span className="font-light text-muted-foreground hidden sm:inline">{detail}</span>
                         </div>
                         <div className="h-3 rounded-sm bg-background overflow-hidden">
-                          <div className={`${width} h-full bg-foreground`} />
+                          <div className={`${width} h-full bg-[#FF7A00]`} />
                         </div>
                       </div>
                     ))}
@@ -247,7 +311,7 @@ export default function Home() {
           <div className="max-w-7xl mx-auto space-y-16">
             <ScrollReveal>
               <div className="max-w-4xl mx-auto text-center space-y-6">
-                <p className="text-sm uppercase tracking-[0.3em] text-muted-foreground">
+                <p className="text-sm uppercase tracking-[0.3em] text-[#FF7A00]">
                   4 etapas estrategicas
                 </p>
                 <h2 className="text-3xl md:text-5xl font-light tracking-wide">
@@ -264,7 +328,7 @@ export default function Home() {
                       <span className="text-sm text-muted-foreground font-light">
                         0{index + 1}
                       </span>
-                      <Icon className="size-5 text-muted-foreground" />
+                      <Icon className="size-5 text-[#FF7A00]" />
                     </div>
                     <h3 className="text-2xl font-light tracking-wide mb-4">{title}</h3>
                     <p className="text-muted-foreground font-light leading-relaxed">{description}</p>
@@ -275,10 +339,49 @@ export default function Home() {
           </div>
         </section>
 
+        <section id="lead-capture" className="py-24 md:py-32 px-6 lg:px-8 border-t border-border bg-background">
+          <div className="max-w-7xl mx-auto grid lg:grid-cols-[0.9fr_1.1fr] gap-12 lg:gap-16 items-start">
+            <ScrollReveal>
+              <div className="space-y-6 lg:sticky lg:top-24">
+                <p className="text-sm uppercase tracking-[0.3em] text-[#FF7A00]">
+                  Diagnostico XGrowth
+                </p>
+                <h2 className="text-3xl md:text-5xl font-light tracking-wide">
+                  Deixe seus dados para avaliarmos o potencial oculto do seu negocio
+                </h2>
+                <p className="text-lg text-muted-foreground font-light leading-relaxed">
+                  Recebemos suas informacoes iniciais e entramos em contato para entender onde estao os
+                  gargalos de demanda, conversao e retencao.
+                </p>
+                <div className="grid gap-3 text-muted-foreground font-light">
+                  <div className="flex items-start gap-3">
+                    <CheckCircle2 className="size-5 mt-0.5 text-[#FF7A00]" />
+                    <span>Analise de marketing e processo comercial</span>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <CheckCircle2 className="size-5 mt-0.5 text-[#FF7A00]" />
+                    <span>Identificacao dos principais gargalos de crescimento</span>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <CheckCircle2 className="size-5 mt-0.5 text-[#FF7A00]" />
+                    <span>Proximo passo claro para gerar mais previsibilidade</span>
+                  </div>
+                </div>
+              </div>
+            </ScrollReveal>
+
+            <ScrollReveal delay={0.2}>
+              <div className="border border-border rounded-sm p-6 md:p-8 bg-accent/30">
+                <LeadCaptureForm />
+              </div>
+            </ScrollReveal>
+          </div>
+        </section>
+
         <section className="py-24 md:py-32 border-t border-border">
           <ScrollReveal>
             <div className="text-center mb-16 space-y-4 px-6">
-              <p className="text-sm uppercase tracking-[0.3em] text-muted-foreground">
+              <p className="text-sm uppercase tracking-[0.3em] text-[#FF7A00]">
                 Prova e execucao
               </p>
               <h2 className="text-4xl md:text-5xl font-light tracking-wide">
