@@ -198,17 +198,10 @@ export default function Home() {
         <section className="relative overflow-hidden border-t border-border bg-black px-6 py-24 text-white md:py-32 lg:px-8">
           <div
             aria-hidden="true"
-            className="absolute inset-0 bg-[radial-gradient(circle_at_78%_50%,rgba(255,122,0,0.24),transparent_34%),linear-gradient(90deg,rgba(0,0,0,0.96),rgba(0,0,0,0.72)_50%,rgba(0,0,0,0.42))]"
-          />
-          <img
-            src={strategyKingImage}
-            alt=""
-            aria-hidden="true"
-            className="pointer-events-none absolute -right-28 bottom-0 h-[82%] object-contain opacity-25 sm:-right-20 lg:-right-10 lg:h-[92%] lg:max-h-[780px] lg:opacity-75"
-            loading="lazy"
+            className="absolute inset-0 bg-[radial-gradient(circle_at_50%_52%,rgba(255,122,0,0.2),transparent_28%),radial-gradient(circle_at_82%_20%,rgba(255,122,0,0.18),transparent_28%),linear-gradient(90deg,rgba(0,0,0,0.97),rgba(0,0,0,0.78)_52%,rgba(0,0,0,0.62))]"
           />
 
-          <div className="relative z-10 mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.92fr_1.08fr] lg:items-center">
+          <div className="relative z-10 mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.95fr_0.52fr_0.82fr] lg:items-center">
             <ScrollReveal>
               <div className="space-y-6">
                 <p className="text-sm uppercase tracking-[0.3em] text-[#FF7A00]">
@@ -231,13 +224,28 @@ export default function Home() {
             </ScrollReveal>
 
             <ScrollReveal delay={0.2}>
-              <div className="grid gap-4 sm:grid-cols-3 lg:pl-12">
+              <div className="relative flex min-h-[22rem] items-center justify-center md:min-h-[30rem] lg:min-h-[38rem]">
+                <div
+                  aria-hidden="true"
+                  className="absolute h-56 w-56 rounded-full bg-[#FF7A00]/20 blur-3xl md:h-72 md:w-72"
+                />
+                <img
+                  src={strategyKingImage}
+                  alt="Peca de rei laranja representando estrategia e comando"
+                  className="relative z-10 h-[22rem] object-contain drop-shadow-[0_0_44px_rgba(255,122,0,0.55)] md:h-[31rem] lg:h-[39rem]"
+                  loading="lazy"
+                />
+              </div>
+            </ScrollReveal>
+
+            <ScrollReveal delay={0.3}>
+              <div className="grid gap-4 sm:grid-cols-3 lg:grid-cols-1">
                 {[
                   ['Diagnostico', 'Encontramos os gargalos antes de investir mais.'],
                   ['Direcao', 'Definimos oferta, mensagem, funil e prioridades.'],
                   ['Controle', 'Medimos cada etapa para escalar com previsibilidade.'],
                 ].map(([title, description]) => (
-                  <div key={title} className="border border-white/14 bg-white/[0.06] p-5 backdrop-blur-sm">
+                  <div key={title} className="border border-white/14 bg-white/[0.07] p-5 backdrop-blur-sm">
                     <div className="mb-6 h-px w-10 bg-[#FF7A00]" />
                     <h3 className="mb-3 text-xl font-light tracking-wide">{title}</h3>
                     <p className="text-sm font-light leading-relaxed text-white/66">{description}</p>
