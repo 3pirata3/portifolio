@@ -10,10 +10,10 @@ import { photographerInfo } from '@/data/photographer';
 import { cn } from '@/lib/utils';
 
 const navLinks = [
-  { name: 'Home', path: '/' },
-  { name: 'Portfolio', path: '/portfolio' },
-  { name: 'About', path: '/about' },
-  { name: 'Contact', path: '/contact' },
+  { name: 'Início', path: '/' },
+  { name: 'Portfólio', path: '/portfolio' },
+  { name: 'Sobre', path: '/about' },
+  { name: 'Contato', path: '/contact' },
 ];
 
 /**
@@ -108,7 +108,7 @@ export function Header() {
                     'size-9',
                     isTransparent && 'text-white hover:bg-white/10'
                   )}
-                  aria-label="Open menu"
+                  aria-label="Abrir menu"
                 >
                   <Menu className="size-5" />
                 </Button>
