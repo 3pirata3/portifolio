@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import heroImage from '@/assets/hero-xgrowth.png';
-import strategyKingImage from '@/assets/strategy-king.png';
+import strategyBackgroundImage from '@/assets/strategy-background.png';
 import teamImage from '@/assets/team-xgrowth.png';
 import { photographerInfo } from '@/data/photographer';
 import { getFeaturedProjects } from '@/data/projects';
@@ -195,13 +195,20 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="relative overflow-hidden border-t border-border bg-black px-6 py-24 text-white md:py-32 lg:px-8">
+        <section className="relative min-h-[680px] overflow-hidden border-t border-border bg-black px-6 py-24 text-white md:py-32 lg:px-8">
+          <img
+            src={strategyBackgroundImage}
+            alt=""
+            aria-hidden="true"
+            className="absolute inset-0 h-full w-full object-cover"
+            loading="lazy"
+          />
           <div
             aria-hidden="true"
-            className="absolute inset-0 bg-[radial-gradient(circle_at_50%_52%,rgba(255,122,0,0.2),transparent_28%),radial-gradient(circle_at_82%_20%,rgba(255,122,0,0.18),transparent_28%),linear-gradient(90deg,rgba(0,0,0,0.97),rgba(0,0,0,0.78)_52%,rgba(0,0,0,0.62))]"
+            className="absolute inset-0 bg-[linear-gradient(90deg,rgba(0,0,0,0.96),rgba(0,0,0,0.78)_42%,rgba(0,0,0,0.56)_70%,rgba(0,0,0,0.82)),linear-gradient(180deg,rgba(0,0,0,0.82),rgba(0,0,0,0.16)_44%,rgba(0,0,0,0.84))]"
           />
 
-          <div className="relative z-10 mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.95fr_0.52fr_0.82fr] lg:items-center">
+          <div className="relative z-10 mx-auto grid min-h-[500px] max-w-7xl gap-12 lg:grid-cols-[0.95fr_0.82fr] lg:items-center">
             <ScrollReveal>
               <div className="space-y-6">
                 <p className="text-sm uppercase tracking-[0.3em] text-[#FF7A00]">
@@ -224,21 +231,6 @@ export default function Home() {
             </ScrollReveal>
 
             <ScrollReveal delay={0.2}>
-              <div className="relative flex min-h-[22rem] items-center justify-center md:min-h-[30rem] lg:min-h-[38rem]">
-                <div
-                  aria-hidden="true"
-                  className="absolute h-56 w-56 rounded-full bg-[#FF7A00]/20 blur-3xl md:h-72 md:w-72"
-                />
-                <img
-                  src={strategyKingImage}
-                  alt="Peca de rei laranja representando estrategia e comando"
-                  className="relative z-10 h-[22rem] object-contain drop-shadow-[0_0_44px_rgba(255,122,0,0.55)] md:h-[31rem] lg:h-[39rem]"
-                  loading="lazy"
-                />
-              </div>
-            </ScrollReveal>
-
-            <ScrollReveal delay={0.3}>
               <div className="grid gap-4 sm:grid-cols-3 lg:grid-cols-1">
                 {[
                   ['Diagnostico', 'Encontramos os gargalos antes de investir mais.'],
