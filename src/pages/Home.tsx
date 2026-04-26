@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import commercialSystemBackgroundImage from '@/assets/commercial-system-background.png';
 import heroImage from '@/assets/hero-xgrowth.png';
+import processBackgroundImage from '@/assets/process-background.png';
 import strategyBackgroundImage from '@/assets/strategy-background.png';
 import teamImage from '@/assets/team-xgrowth.png';
 import { photographerInfo } from '@/data/photographer';
@@ -303,10 +304,21 @@ export default function Home() {
           </div>
         </section>
 
-        <section className={`relative overflow-hidden px-6 py-24 text-white md:py-32 lg:px-8 bg-[linear-gradient(180deg,#050505,#120904_50%,#050505)] ${sectionDividerClass}`}>
+        <section className={`relative overflow-hidden px-6 py-24 text-white md:py-32 lg:px-8 bg-black ${sectionDividerClass}`}>
+          <img
+            src={processBackgroundImage}
+            alt=""
+            aria-hidden="true"
+            className="absolute inset-0 h-full w-full object-cover object-center opacity-95"
+            loading="lazy"
+          />
           <div
             aria-hidden="true"
-            className="absolute inset-0 bg-[linear-gradient(65deg,transparent,rgba(255,122,0,0.14)_45%,transparent_70%)]"
+            className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(0,0,0,0.2),rgba(0,0,0,0.44)_48%,rgba(0,0,0,0.82)),linear-gradient(90deg,rgba(0,0,0,0.58),rgba(0,0,0,0.24)_42%,rgba(0,0,0,0.68))]"
+          />
+          <div
+            aria-hidden="true"
+            className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.62),transparent_28%,rgba(0,0,0,0.72))]"
           />
           <div className="relative z-10 max-w-7xl mx-auto grid lg:grid-cols-[1.08fr_0.92fr] gap-12 lg:gap-16 items-center">
             <ScrollReveal>
