@@ -162,8 +162,12 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="py-24 md:py-32 px-6 lg:px-8 bg-background">
-          <div className="max-w-7xl mx-auto space-y-16">
+        <section className="relative overflow-hidden px-6 py-24 text-white md:py-32 lg:px-8 bg-[linear-gradient(180deg,#050505,#100905_52%,#050505)]">
+          <div
+            aria-hidden="true"
+            className="absolute inset-0 bg-[linear-gradient(115deg,rgba(255,122,0,0.16),transparent_28%,transparent_72%,rgba(255,122,0,0.1)),linear-gradient(180deg,rgba(255,122,0,0.08),transparent_18%,transparent_80%,rgba(255,122,0,0.08))]"
+          />
+          <div className="relative z-10 max-w-7xl mx-auto space-y-16">
             <ScrollReveal>
               <div className="max-w-4xl mx-auto text-center space-y-6">
                 <p className="text-sm uppercase tracking-[0.3em] text-[#FF7A00]">
@@ -172,7 +176,7 @@ export default function Home() {
                 <h2 className="text-3xl md:text-5xl font-light tracking-wide">
                   Metodologia comprovada para transformar seu negocio em uma maquina de vendas previsivel
                 </h2>
-                <p className="text-lg font-light leading-relaxed text-muted-foreground">
+                <p className="text-lg font-light leading-relaxed text-white/68">
                   A XGrowth estrutura o crescimento onde ele realmente acontece: demanda, processo comercial,
                   retencao e execucao. O portfolio mostra a ponta visivel; a metodologia sustenta o resultado.
                 </p>
@@ -182,12 +186,12 @@ export default function Home() {
             <div className="grid md:grid-cols-3 gap-4 md:gap-6">
               {growthPillars.map(({ title, description, Icon }, index) => (
                 <ScrollReveal key={title} delay={index * 0.1}>
-                  <div className="h-full border border-border rounded-sm p-6 md:p-8 bg-background transition-colors hover:border-[#FF7A00]/50">
-                    <div className="size-11 rounded-sm bg-[#FF7A00]/10 flex items-center justify-center mb-8">
+                  <div className="h-full border border-[#FF7A00]/18 rounded-sm p-6 md:p-8 bg-white/[0.035] shadow-[0_0_44px_rgba(255,122,0,0.08)] transition-colors hover:border-[#FF7A00]/50">
+                    <div className="size-11 rounded-sm bg-[#FF7A00]/12 flex items-center justify-center mb-8 shadow-[0_0_24px_rgba(255,122,0,0.22)]">
                       <Icon className="size-5 text-[#FF7A00]" />
                     </div>
                     <h3 className="text-2xl font-light tracking-wide mb-4">{title}</h3>
-                    <p className="text-muted-foreground font-light leading-relaxed">{description}</p>
+                    <p className="text-white/64 font-light leading-relaxed">{description}</p>
                   </div>
                 </ScrollReveal>
               ))}
@@ -195,7 +199,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="relative min-h-[720px] overflow-hidden border-t border-border bg-black px-6 py-20 text-white sm:px-10 md:py-28 lg:px-20 xl:px-24">
+        <section className="relative min-h-[720px] overflow-hidden bg-black px-6 py-20 text-white sm:px-10 md:py-28 lg:px-20 xl:px-24 shadow-[inset_0_42px_90px_rgba(255,122,0,0.08),inset_0_-42px_90px_rgba(255,122,0,0.08)]">
           <img
             src={strategyBackgroundImage}
             alt=""
@@ -284,10 +288,14 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="py-24 md:py-32 px-6 lg:px-8 border-t border-border">
-          <div className="max-w-7xl mx-auto grid lg:grid-cols-[1.08fr_0.92fr] gap-12 lg:gap-16 items-center">
+        <section className="relative overflow-hidden px-6 py-24 text-white md:py-32 lg:px-8 bg-[linear-gradient(180deg,#050505,#120904_50%,#050505)]">
+          <div
+            aria-hidden="true"
+            className="absolute inset-0 bg-[linear-gradient(65deg,transparent,rgba(255,122,0,0.14)_45%,transparent_70%)]"
+          />
+          <div className="relative z-10 max-w-7xl mx-auto grid lg:grid-cols-[1.08fr_0.92fr] gap-12 lg:gap-16 items-center">
             <ScrollReveal>
-              <div className="relative overflow-hidden rounded-sm bg-muted">
+              <div className="relative overflow-hidden rounded-sm bg-black shadow-[0_0_70px_rgba(255,122,0,0.14)]">
                 <img
                   src={teamImage}
                   alt="Equipe XGrowth analisando campanhas e metricas de performance"
@@ -309,14 +317,14 @@ export default function Home() {
                 <h2 className="text-3xl md:text-5xl font-light tracking-wide">
                   Campanhas analisadas com olhar de vendas, nao so de midia
                 </h2>
-                <p className="text-lg text-muted-foreground font-light leading-relaxed">
+                <p className="text-lg text-white/68 font-light leading-relaxed">
                   Nossa equipe olha para criativos, metricas, oferta, atendimento e retencao no mesmo
                   processo. Assim, cada campanha deixa de ser uma acao isolada e vira parte de um sistema
                   previsivel de crescimento.
                 </p>
                 <a
                   href="#lead-capture"
-                  className="inline-flex items-center gap-2 text-base font-light tracking-wide text-foreground hover:text-[#FF7A00] transition-colors group"
+                  className="inline-flex items-center gap-2 text-base font-light tracking-wide text-white hover:text-[#FF7A00] transition-colors group"
                 >
                   <span>Quero entender meu potencial oculto</span>
                   <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
@@ -326,8 +334,12 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="py-24 md:py-32 px-6 lg:px-8 bg-background border-t border-border">
-          <div className="max-w-7xl mx-auto space-y-16">
+        <section className="relative overflow-hidden px-6 py-24 text-white md:py-32 lg:px-8 bg-[linear-gradient(180deg,#050505,#0f0703_54%,#050505)]">
+          <div
+            aria-hidden="true"
+            className="absolute inset-0 bg-[linear-gradient(135deg,rgba(255,122,0,0.12),transparent_35%,transparent_66%,rgba(255,122,0,0.1))]"
+          />
+          <div className="relative z-10 max-w-7xl mx-auto space-y-16">
             <ScrollReveal>
               <div className="max-w-4xl mx-auto text-center space-y-6">
                 <p className="text-sm uppercase tracking-[0.3em] text-[#FF7A00]">
@@ -342,15 +354,15 @@ export default function Home() {
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
               {icebergStages.map(({ title, description, Icon }, index) => (
                 <ScrollReveal key={title} delay={index * 0.08}>
-                  <div className="h-full border border-border rounded-sm p-6 bg-background">
+                  <div className="h-full border border-[#FF7A00]/18 rounded-sm p-6 bg-white/[0.035] shadow-[0_0_44px_rgba(255,122,0,0.08)]">
                     <div className="flex items-center justify-between mb-8">
-                      <span className="text-sm text-muted-foreground font-light">
+                      <span className="text-sm text-white/46 font-light">
                         0{index + 1}
                       </span>
                       <Icon className="size-5 text-[#FF7A00]" />
                     </div>
                     <h3 className="text-2xl font-light tracking-wide mb-4">{title}</h3>
-                    <p className="text-muted-foreground font-light leading-relaxed">{description}</p>
+                    <p className="text-white/64 font-light leading-relaxed">{description}</p>
                   </div>
                 </ScrollReveal>
               ))}
@@ -358,8 +370,12 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="lead-capture" className="py-24 md:py-32 px-6 lg:px-8 border-t border-border bg-background">
-          <div className="max-w-7xl mx-auto grid lg:grid-cols-[0.9fr_1.1fr] gap-12 lg:gap-16 items-start">
+        <section id="lead-capture" className="relative overflow-hidden px-6 py-24 text-white md:py-32 lg:px-8 bg-[linear-gradient(180deg,#050505,#130a04_50%,#050505)]">
+          <div
+            aria-hidden="true"
+            className="absolute inset-0 bg-[linear-gradient(110deg,transparent,rgba(255,122,0,0.14)_48%,transparent_76%)]"
+          />
+          <div className="relative z-10 max-w-7xl mx-auto grid lg:grid-cols-[0.9fr_1.1fr] gap-12 lg:gap-16 items-start">
             <ScrollReveal>
               <div className="space-y-6 lg:sticky lg:top-24">
                 <p className="text-sm uppercase tracking-[0.3em] text-[#FF7A00]">
@@ -368,11 +384,11 @@ export default function Home() {
                 <h2 className="text-3xl md:text-5xl font-light tracking-wide">
                   Deixe seus dados para avaliarmos o potencial oculto do seu negocio
                 </h2>
-                <p className="text-lg text-muted-foreground font-light leading-relaxed">
+                <p className="text-lg text-white/68 font-light leading-relaxed">
                   Recebemos suas informacoes iniciais e entramos em contato para entender onde estao os
                   gargalos de demanda, conversao e retencao.
                 </p>
-                <div className="grid gap-3 text-muted-foreground font-light">
+                <div className="grid gap-3 text-white/68 font-light">
                   <div className="flex items-start gap-3">
                     <CheckCircle2 className="size-5 mt-0.5 text-[#FF7A00]" />
                     <span>Analise de marketing e processo comercial</span>
@@ -390,29 +406,33 @@ export default function Home() {
             </ScrollReveal>
 
             <ScrollReveal delay={0.2}>
-              <div className="border border-border rounded-sm p-6 md:p-8 bg-accent/30">
+              <div className="border border-[#FF7A00]/22 rounded-sm p-6 md:p-8 bg-white/[0.04] shadow-[0_0_70px_rgba(255,122,0,0.12)] backdrop-blur-sm">
                 <LeadCaptureForm />
               </div>
             </ScrollReveal>
           </div>
         </section>
 
-        <section className="py-24 md:py-32 border-t border-border">
+        <section className="relative overflow-hidden py-24 text-white md:py-32 bg-[linear-gradient(180deg,#050505,#0e0703_52%,#050505)]">
+          <div
+            aria-hidden="true"
+            className="absolute inset-0 bg-[linear-gradient(70deg,rgba(255,122,0,0.12),transparent_32%,transparent_68%,rgba(255,122,0,0.08))]"
+          />
           <ScrollReveal>
-            <div className="text-center mb-16 space-y-4 px-6">
+            <div className="relative z-10 text-center mb-16 space-y-4 px-6">
               <p className="text-sm uppercase tracking-[0.3em] text-[#FF7A00]">
                 Prova e execucao
               </p>
               <h2 className="text-4xl md:text-5xl font-light tracking-wide">
                 Portfolio de resultados
               </h2>
-              <p className="text-lg text-muted-foreground font-light tracking-wide max-w-2xl mx-auto">
+              <p className="text-lg text-white/68 font-light tracking-wide max-w-2xl mx-auto">
                 Criativos, campanhas, paginas e materiais que mostram como a estrategia ganha forma na pratica.
               </p>
             </div>
           </ScrollReveal>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-4">
+          <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-4">
             {featuredProjects.map((project, index) => (
               <ProjectCard
                 key={project.id}
@@ -425,10 +445,10 @@ export default function Home() {
           </div>
 
           <ScrollReveal delay={0.4}>
-            <div className="flex justify-center mt-16 px-6">
+            <div className="relative z-10 flex justify-center mt-16 px-6">
               <Link
                 to="/portfolio"
-                className="group inline-flex items-center gap-2 text-lg font-light tracking-wide text-foreground hover:text-muted-foreground transition-colors"
+                className="group inline-flex items-center gap-2 text-lg font-light tracking-wide text-white hover:text-[#FF7A00] transition-colors"
               >
                 <span>Ver Todo o Portifolio</span>
                 <ArrowRight className="size-5 transition-transform group-hover:translate-x-1" />
