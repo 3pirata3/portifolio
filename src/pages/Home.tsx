@@ -195,7 +195,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="relative min-h-[720px] overflow-hidden border-t border-border bg-black px-6 py-20 text-white md:py-28 lg:px-8">
+        <section className="relative min-h-[720px] overflow-hidden border-t border-border bg-black px-6 py-20 text-white sm:px-10 md:py-28 lg:px-20 xl:px-24">
           <img
             src={strategyBackgroundImage}
             alt=""
@@ -208,9 +208,9 @@ export default function Home() {
             className="absolute inset-0 bg-[linear-gradient(90deg,rgba(0,0,0,0.78),rgba(0,0,0,0.46)_40%,rgba(0,0,0,0.22)_64%,rgba(0,0,0,0.34)),linear-gradient(180deg,rgba(0,0,0,0.5),rgba(0,0,0,0.06)_45%,rgba(0,0,0,0.56))]"
           />
 
-          <div className="relative z-10 mx-auto grid min-h-[560px] max-w-7xl gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
-            <ScrollReveal>
-              <div className="max-w-xl space-y-8">
+          <div className="relative z-10 mx-auto grid min-h-[560px] max-w-[1680px] gap-12 lg:grid-cols-[0.92fr_1.08fr] lg:items-center lg:gap-8 xl:grid-cols-[minmax(430px,0.72fr)_minmax(260px,0.52fr)_minmax(560px,0.82fr)]">
+            <ScrollReveal className="lg:col-start-1 lg:justify-self-start">
+              <div className="max-w-[34rem] space-y-8 lg:justify-self-start">
                 <p className="text-sm uppercase tracking-[0.3em] text-[#FF7A00]">
                   Por que Iceberg?
                 </p>
@@ -240,8 +240,8 @@ export default function Home() {
               </div>
             </ScrollReveal>
 
-            <ScrollReveal delay={0.2}>
-              <div className="relative ml-auto w-full max-w-2xl overflow-hidden rounded-lg border border-[#FF7A00]/35 bg-black/48 p-6 shadow-[0_0_80px_rgba(255,122,0,0.24)] backdrop-blur-md md:p-8">
+            <ScrollReveal delay={0.2} className="w-full lg:justify-self-end xl:col-start-3">
+              <div className="relative w-full max-w-2xl overflow-hidden rounded-lg border border-[#FF7A00]/35 bg-black/48 p-6 shadow-[0_0_80px_rgba(255,122,0,0.24)] backdrop-blur-md md:p-8">
                 <div
                   aria-hidden="true"
                   className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#FF7A00] to-transparent"
