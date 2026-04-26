@@ -227,6 +227,10 @@ export default function Home() {
             aria-hidden="true"
             className="absolute inset-0 bg-[linear-gradient(90deg,rgba(0,0,0,0.78),rgba(0,0,0,0.46)_40%,rgba(0,0,0,0.22)_64%,rgba(0,0,0,0.34)),linear-gradient(180deg,rgba(0,0,0,0.5),rgba(0,0,0,0.06)_45%,rgba(0,0,0,0.56))]"
           />
+          <div
+            aria-hidden="true"
+            className="absolute inset-x-0 bottom-0 z-[5] h-44 bg-gradient-to-b from-transparent via-black/55 to-black"
+          />
 
           <div className="relative z-10 mx-auto grid min-h-[560px] max-w-[1680px] gap-12 lg:grid-cols-[0.92fr_1.08fr] lg:items-center lg:gap-8 xl:grid-cols-[minmax(430px,0.72fr)_minmax(260px,0.52fr)_minmax(560px,0.82fr)]">
             <ScrollReveal className="lg:col-start-1 lg:justify-self-start">
