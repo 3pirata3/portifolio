@@ -365,10 +365,21 @@ export default function Home() {
           </div>
         </section>
 
-        <section className={`relative overflow-hidden px-6 py-24 text-white md:py-32 lg:px-8 bg-[linear-gradient(180deg,#050505,#0f0703_54%,#050505)] ${sectionDividerClass}`}>
+        <section className={`relative overflow-hidden px-6 py-24 text-white md:py-32 lg:px-8 bg-black ${sectionDividerClass}`}>
+          <img
+            src={processBackgroundImage}
+            alt=""
+            aria-hidden="true"
+            className="absolute inset-0 h-full w-full object-cover object-center opacity-95"
+            loading="lazy"
+          />
           <div
             aria-hidden="true"
-            className="absolute inset-0 bg-[linear-gradient(135deg,rgba(255,122,0,0.12),transparent_35%,transparent_66%,rgba(255,122,0,0.1))]"
+            className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(0,0,0,0.18),rgba(0,0,0,0.48)_46%,rgba(0,0,0,0.84)),linear-gradient(180deg,rgba(0,0,0,0.68),rgba(0,0,0,0.22)_42%,rgba(0,0,0,0.78))]"
+          />
+          <div
+            aria-hidden="true"
+            className="absolute inset-0 bg-[linear-gradient(120deg,rgba(255,122,0,0.13),transparent_28%,transparent_68%,rgba(255,122,0,0.12))]"
           />
           <div className="relative z-10 max-w-7xl mx-auto space-y-16">
             <ScrollReveal>
