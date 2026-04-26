@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import commercialSystemBackgroundImage from '@/assets/commercial-system-background.png';
 import heroImage from '@/assets/hero-xgrowth.png';
 import strategyBackgroundImage from '@/assets/strategy-background.png';
 import teamImage from '@/assets/team-xgrowth.png';
@@ -71,6 +72,9 @@ const xgrowthDifference = [
   'Resultados mensuraveis e escalaveis',
 ];
 
+const sectionDividerClass =
+  'before:pointer-events-none before:absolute before:inset-x-0 before:top-0 before:z-20 before:h-px before:bg-gradient-to-r before:from-transparent before:via-[#D7A545]/70 before:to-transparent after:pointer-events-none after:absolute after:inset-x-0 after:bottom-0 after:z-20 after:h-px after:bg-gradient-to-r after:from-transparent after:via-[#D7A545]/60 after:to-transparent';
+
 /**
  * Homepage with company positioning, Iceberg methodology, and featured work.
  */
@@ -82,7 +86,7 @@ export default function Home() {
       <SEOHead />
 
       <div className="min-h-screen">
-        <section className="relative h-screen w-full overflow-hidden">
+        <section className="relative h-screen w-full overflow-hidden after:pointer-events-none after:absolute after:inset-x-0 after:bottom-0 after:z-20 after:h-px after:bg-gradient-to-r after:from-transparent after:via-[#D7A545]/70 after:to-transparent">
           <div className="absolute inset-0">
             <img
               src={heroImage}
@@ -162,10 +166,21 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="relative overflow-hidden px-6 py-24 text-white md:py-32 lg:px-8 bg-[linear-gradient(180deg,#050505,#100905_52%,#050505)]">
+        <section className={`relative overflow-hidden px-6 py-24 text-white md:py-32 lg:px-8 ${sectionDividerClass}`}>
+          <img
+            src={commercialSystemBackgroundImage}
+            alt=""
+            aria-hidden="true"
+            className="absolute inset-0 h-full w-full object-cover object-center opacity-90"
+            loading="lazy"
+          />
           <div
             aria-hidden="true"
-            className="absolute inset-0 bg-[linear-gradient(115deg,rgba(255,122,0,0.16),transparent_28%,transparent_72%,rgba(255,122,0,0.1)),linear-gradient(180deg,rgba(255,122,0,0.08),transparent_18%,transparent_80%,rgba(255,122,0,0.08))]"
+            className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(0,0,0,0.46),rgba(0,0,0,0.28)_34%,rgba(0,0,0,0.72)_72%),linear-gradient(180deg,rgba(0,0,0,0.72),rgba(0,0,0,0.22)_45%,rgba(0,0,0,0.78))]"
+          />
+          <div
+            aria-hidden="true"
+            className="absolute inset-0 bg-[linear-gradient(115deg,rgba(255,122,0,0.13),transparent_25%,transparent_72%,rgba(255,122,0,0.18))]"
           />
           <div className="relative z-10 max-w-7xl mx-auto space-y-16">
             <ScrollReveal>
@@ -199,7 +214,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="relative min-h-[720px] overflow-hidden bg-black px-6 py-20 text-white sm:px-10 md:py-28 lg:px-20 xl:px-24 shadow-[inset_0_42px_90px_rgba(255,122,0,0.08),inset_0_-42px_90px_rgba(255,122,0,0.08)]">
+        <section className={`relative min-h-[720px] overflow-hidden bg-black px-6 py-20 text-white shadow-[inset_0_42px_90px_rgba(255,122,0,0.08),inset_0_-42px_90px_rgba(255,122,0,0.08)] sm:px-10 md:py-28 lg:px-20 xl:px-24 ${sectionDividerClass}`}>
           <img
             src={strategyBackgroundImage}
             alt=""
@@ -288,7 +303,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="relative overflow-hidden px-6 py-24 text-white md:py-32 lg:px-8 bg-[linear-gradient(180deg,#050505,#120904_50%,#050505)]">
+        <section className={`relative overflow-hidden px-6 py-24 text-white md:py-32 lg:px-8 bg-[linear-gradient(180deg,#050505,#120904_50%,#050505)] ${sectionDividerClass}`}>
           <div
             aria-hidden="true"
             className="absolute inset-0 bg-[linear-gradient(65deg,transparent,rgba(255,122,0,0.14)_45%,transparent_70%)]"
@@ -334,7 +349,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="relative overflow-hidden px-6 py-24 text-white md:py-32 lg:px-8 bg-[linear-gradient(180deg,#050505,#0f0703_54%,#050505)]">
+        <section className={`relative overflow-hidden px-6 py-24 text-white md:py-32 lg:px-8 bg-[linear-gradient(180deg,#050505,#0f0703_54%,#050505)] ${sectionDividerClass}`}>
           <div
             aria-hidden="true"
             className="absolute inset-0 bg-[linear-gradient(135deg,rgba(255,122,0,0.12),transparent_35%,transparent_66%,rgba(255,122,0,0.1))]"
@@ -370,7 +385,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="lead-capture" className="relative overflow-hidden px-6 py-24 text-white md:py-32 lg:px-8 bg-[linear-gradient(180deg,#050505,#130a04_50%,#050505)]">
+        <section id="lead-capture" className={`relative overflow-hidden px-6 py-24 text-white md:py-32 lg:px-8 bg-[linear-gradient(180deg,#050505,#130a04_50%,#050505)] ${sectionDividerClass}`}>
           <div
             aria-hidden="true"
             className="absolute inset-0 bg-[linear-gradient(110deg,transparent,rgba(255,122,0,0.14)_48%,transparent_76%)]"
@@ -413,7 +428,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="relative overflow-hidden py-24 text-white md:py-32 bg-[linear-gradient(180deg,#050505,#0e0703_52%,#050505)]">
+        <section className={`relative overflow-hidden py-24 text-white md:py-32 bg-[linear-gradient(180deg,#050505,#0e0703_52%,#050505)] ${sectionDividerClass}`}>
           <div
             aria-hidden="true"
             className="absolute inset-0 bg-[linear-gradient(70deg,rgba(255,122,0,0.12),transparent_32%,transparent_68%,rgba(255,122,0,0.08))]"
