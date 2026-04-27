@@ -12,7 +12,7 @@ import { Lightbox } from '@/components/portfolio/Lightbox';
 const categoryLabels: Record<string, string> = {
   ads: 'Criativos de ads',
   social: 'Social media',
-  branding: 'Identidade',
+  branding: 'Prova social e autoridade',
   'landing-page': 'Landing page',
   automation: 'Automacao',
 };
@@ -51,7 +51,7 @@ export default function ProjectDetail() {
 
       <div className="min-h-screen">
         <motion.div
-          className="relative w-full h-[70vh] overflow-hidden bg-muted"
+          className="relative w-full h-[74vh] overflow-hidden bg-black"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
@@ -59,11 +59,11 @@ export default function ProjectDetail() {
           <img
             src={project.coverImage}
             alt={project.title}
-            className="w-full h-full object-cover"
+            className="h-full w-full object-contain p-4 md:p-8"
             loading="eager"
             fetchPriority="high"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-black/20 pointer-events-none" />
         </motion.div>
 
         <section className="max-w-4xl mx-auto px-6 lg:px-8 py-12 md:py-16">

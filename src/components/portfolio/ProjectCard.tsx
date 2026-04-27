@@ -14,7 +14,7 @@ interface ProjectCardProps {
 const categoryLabels: Record<string, string> = {
   ads: 'Ads',
   social: 'Social',
-  branding: 'Identidade',
+  branding: 'Autoridade',
   'landing-page': 'Landing Page',
   automation: 'Automacao',
 };
@@ -45,7 +45,7 @@ export function ProjectCard({
     >
       <Link
         to={`/project/${project.slug}`}
-        className="group block relative overflow-hidden rounded-sm"
+        className="group block relative overflow-hidden rounded-sm shadow-[0_0_44px_rgba(255,122,0,0.08)]"
       >
         <div className={cn('relative overflow-hidden bg-muted', aspectRatioClasses[ratio])}>
           {!isLoaded && <div className="absolute inset-0 bg-muted" />}
@@ -62,7 +62,7 @@ export function ProjectCard({
             onLoad={() => setIsLoaded(true)}
           />
 
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+          <div className="absolute inset-0 bg-gradient-to-t from-black/86 via-black/20 to-transparent opacity-100 transition-opacity duration-500 md:opacity-0 md:group-hover:opacity-100">
             <div className="absolute bottom-0 left-0 right-0 p-6 space-y-2">
               <h3 className="text-white text-xl md:text-2xl font-light tracking-wide">
                 {project.title}
@@ -77,7 +77,7 @@ export function ProjectCard({
             </div>
           </div>
 
-          <div className="absolute inset-0 border-2 border-white/0 group-hover:border-white/10 transition-colors duration-500" />
+          <div className="absolute inset-0 border border-[#FF7A00]/18 group-hover:border-[#FF7A00]/45 transition-colors duration-500" />
         </div>
       </Link>
     </motion.div>

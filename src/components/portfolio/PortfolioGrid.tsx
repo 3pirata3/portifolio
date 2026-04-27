@@ -33,7 +33,7 @@ export function PortfolioGrid({ projects }: PortfolioGridProps) {
           >
             <ProjectCard
               project={project}
-              aspectRatio="landscape"
+              aspectRatio="portrait"
               showCategory={true}
               index={index}
             />

@@ -479,7 +479,7 @@ export default function Home() {
               <ProjectCard
                 key={project.id}
                 project={project}
-                aspectRatio="landscape"
+                aspectRatio="portrait"
                 showCategory={true}
                 index={index}
               />
