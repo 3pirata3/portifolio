@@ -32,7 +32,7 @@ export function ProjectCard({
   const ratio = aspectRatio || 'landscape';
 
   const aspectRatioClasses = {
-    portrait: 'aspect-[3/4]',
+    portrait: 'aspect-[4/5]',
     landscape: 'aspect-[3/2]',
     square: 'aspect-square',
   };

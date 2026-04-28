@@ -40,6 +40,8 @@ export default function ProjectDetail() {
     setLightboxOpen(false);
   };
 
+  const hasGallery = project.images.some((image) => image.id !== 'coming-soon');
+
   return (
     <>
       <SEOHead
@@ -125,29 +127,41 @@ export default function ProjectDetail() {
           </motion.div>
         </section>
 
-        <section className="py-12 md:py-16">
-          <div className="space-y-8 md:space-y-12">
-            {project.images.map((image, index) => (
-              <ScrollReveal key={image.id} delay={index * 0.1}>
-                <ImageWithLightbox
-                  image={image}
-                  onClick={() => openLightbox(index)}
-                  priority={index === 0}
-                  index={0}
-                  className="w-full"
-                />
-              </ScrollReveal>
-            ))}
-          </div>
+        <section className="px-6 py-12 md:px-8 md:py-16">
+          {hasGallery ? (
+            <div className="mx-auto grid max-w-7xl grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+              {project.images.map((image, index) => (
+                <ScrollReveal key={image.id} delay={index * 0.05}>
+                  <ImageWithLightbox
+                    image={image}
+                    onClick={() => openLightbox(index)}
+                    priority={index < 4}
+                    index={0}
+                    className="w-full shadow-[0_0_38px_rgba(255,122,0,0.08)]"
+                  />
+                </ScrollReveal>
+              ))}
+            </div>
+          ) : (
+            <div className="mx-auto max-w-3xl rounded-sm border border-[#FF7A00]/20 bg-white/[0.03] px-6 py-12 text-center shadow-[0_0_44px_rgba(255,122,0,0.08)]">
+              <p className="text-sm uppercase tracking-[0.3em] text-[#FF7A00]">Em breve</p>
+              <h2 className="mt-4 text-3xl font-light tracking-wide">Materiais dessa categoria serao adicionados em breve</h2>
+              <p className="mt-4 text-muted-foreground">
+                Esta area ja esta separada para receber os proximos trabalhos da XGrowth.
+              </p>
+            </div>
+          )}
         </section>
 
-        <Lightbox
-          images={project.images}
-          currentIndex={currentImageIndex}
-          isOpen={lightboxOpen}
-          onClose={closeLightbox}
-          onNavigate={setCurrentImageIndex}
-        />
+        {hasGallery && (
+          <Lightbox
+            images={project.images}
+            currentIndex={currentImageIndex}
+            isOpen={lightboxOpen}
+            onClose={closeLightbox}
+            onNavigate={setCurrentImageIndex}
+          />
+        )}
       </div>
     </>
   );

@@ -26,7 +26,7 @@ export function ImageWithLightbox({
   const [isHovered, setIsHovered] = useState(false);
 
   const aspectRatioClasses = {
-    portrait: 'aspect-[3/4]',
+    portrait: 'aspect-[4/5]',
     landscape: 'aspect-[3/2]',
     square: 'aspect-square'
   };

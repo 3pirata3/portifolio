@@ -8,7 +8,17 @@ import socialMedia07 from '@/assets/portfolio/social-media/7.png';
 import socialMedia08 from '@/assets/portfolio/social-media/8.png';
 import socialMedia09 from '@/assets/portfolio/social-media/9.png';
 import socialMedia10 from '@/assets/portfolio/social-media/10.png';
+import processBackgroundImage from '@/assets/process-background.png';
 import type { Project } from '@/types';
+
+const comingSoonImages = [
+  {
+    id: 'coming-soon',
+    src: processBackgroundImage,
+    alt: 'Categoria de servico em preparacao',
+    aspectRatio: 'landscape' as const,
+  },
+];
 
 export const projects: Project[] = [
   {
@@ -42,6 +52,48 @@ export const projects: Project[] = [
         alt: 'Peca de conteudo para redes sociais',
         aspectRatio: 'portrait',
       },
+      {
+        id: 'social-media-4',
+        src: socialMedia04,
+        alt: 'Criativo social media com foco em prova social',
+        aspectRatio: 'portrait',
+      },
+      {
+        id: 'social-media-5',
+        src: socialMedia05,
+        alt: 'Peca visual social media para autoridade',
+        aspectRatio: 'portrait',
+      },
+      {
+        id: 'social-media-6',
+        src: socialMedia06,
+        alt: 'Post social media para reputacao de marca',
+        aspectRatio: 'portrait',
+      },
+      {
+        id: 'social-media-7',
+        src: socialMedia07,
+        alt: 'Criativo social media com chamada comercial',
+        aspectRatio: 'portrait',
+      },
+      {
+        id: 'social-media-8',
+        src: socialMedia08,
+        alt: 'Arte social media de oferta',
+        aspectRatio: 'portrait',
+      },
+      {
+        id: 'social-media-9',
+        src: socialMedia09,
+        alt: 'Conteudo social media para conversao',
+        aspectRatio: 'portrait',
+      },
+      {
+        id: 'social-media-10',
+        src: socialMedia10,
+        alt: 'Post social media para nutricao de leads',
+        aspectRatio: 'portrait',
+      },
     ],
   },
   {
@@ -50,32 +102,13 @@ export const projects: Project[] = [
     category: 'branding',
     year: '2026',
     slug: 'prova-social-e-autoridade',
-    coverImage: socialMedia04,
+    coverImage: processBackgroundImage,
     description:
-      'Criativos que reforcam confianca, profissionalismo e percepcao de valor para ajudar o cliente a entender por que escolher a empresa.',
+      'Categoria reservada para criativos que reforcam confianca, profissionalismo e percepcao de valor. As pecas especificas serao adicionadas em breve.',
     client: 'Autoridade, reputacao e validacao de marca',
     deliverables: 'Posts de prova social, posicionamento e reforco de credibilidade',
     location: 'Redes sociais e campanhas de relacionamento',
-    images: [
-      {
-        id: 'proof-1',
-        src: socialMedia04,
-        alt: 'Criativo de prova social para redes sociais',
-        aspectRatio: 'portrait',
-      },
-      {
-        id: 'proof-2',
-        src: socialMedia05,
-        alt: 'Peca visual de autoridade para marca',
-        aspectRatio: 'portrait',
-      },
-      {
-        id: 'proof-3',
-        src: socialMedia06,
-        alt: 'Post de reputacao e prova social',
-        aspectRatio: 'portrait',
-      },
-    ],
+    images: comingSoonImages,
   },
   {
     id: '3',
@@ -83,26 +116,13 @@ export const projects: Project[] = [
     category: 'ads',
     year: '2026',
     slug: 'criativos-de-oferta-para-ads',
-    coverImage: socialMedia07,
+    coverImage: processBackgroundImage,
     description:
-      'Pecas pensadas para leitura rapida, destaque de promessa e comunicacao direta da oferta em campanhas de captacao e conversao.',
+      'Categoria reservada para pecas de oferta, leitura rapida e comunicacao direta em campanhas de captacao e conversao. As pecas especificas serao adicionadas em breve.',
     client: 'Campanhas de Meta Ads e aquisicao de leads',
     deliverables: 'Criativos de oferta, variacoes de anuncio e chamadas comerciais',
     location: 'Meta Ads, Instagram e Facebook',
-    images: [
-      {
-        id: 'ads-1',
-        src: socialMedia07,
-        alt: 'Criativo de oferta para anuncio',
-        aspectRatio: 'portrait',
-      },
-      {
-        id: 'ads-2',
-        src: socialMedia08,
-        alt: 'Peca comercial para campanha paga',
-        aspectRatio: 'portrait',
-      },
-    ],
+    images: comingSoonImages,
   },
   {
     id: '4',
@@ -110,26 +130,13 @@ export const projects: Project[] = [
     category: 'social',
     year: '2026',
     slug: 'conteudo-para-conversao',
-    coverImage: socialMedia09,
+    coverImage: processBackgroundImage,
     description:
-      'Conteudos com visual profissional e mensagem objetiva para educar o publico, quebrar objecoes e aproximar o lead da decisao de compra.',
+      'Categoria reservada para conteudos que educam, quebram objecoes e aproximam o lead da decisao de compra. As pecas especificas serao adicionadas em breve.',
     client: 'Conteudo estrategico para nutrir e converter',
     deliverables: 'Posts educativos, criativos de valor e pecas de apoio comercial',
     location: 'Instagram, Facebook e funis digitais',
-    images: [
-      {
-        id: 'conversion-1',
-        src: socialMedia09,
-        alt: 'Conteudo estrategico para conversao',
-        aspectRatio: 'portrait',
-      },
-      {
-        id: 'conversion-2',
-        src: socialMedia10,
-        alt: 'Post comercial para nutricao de leads',
-        aspectRatio: 'portrait',
-      },
-    ],
+    images: comingSoonImages,
   },
 ];
 

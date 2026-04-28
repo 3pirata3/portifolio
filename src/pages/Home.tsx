@@ -77,21 +77,25 @@ const portfolioCategories = [
     title: 'Social Media',
     description: 'Posts e criativos para manter presenca, autoridade e comunicacao comercial nas redes.',
     slug: 'social-media-comercial',
+    hasExamples: true,
   },
   {
     title: 'Prova Social',
     description: 'Pecas que reforcam confianca, reputacao e percepcao de valor para a marca.',
     slug: 'prova-social-e-autoridade',
+    hasExamples: false,
   },
   {
     title: 'Criativos para Ads',
     description: 'Artes de oferta para campanhas pagas com leitura rapida e foco em conversao.',
     slug: 'criativos-de-oferta-para-ads',
+    hasExamples: false,
   },
   {
     title: 'Resultados e Conversao',
     description: 'Conteudos e materiais que educam, quebram objecoes e aproximam o lead da compra.',
     slug: 'conteudo-para-conversao',
+    hasExamples: false,
   },
 ];
 
@@ -504,7 +508,7 @@ export default function Home() {
           </ScrollReveal>
 
           <div className="relative z-10 mx-auto grid max-w-7xl grid-cols-1 gap-4 px-4 md:grid-cols-2 lg:grid-cols-4 md:px-8">
-            {categorizedPortfolio.map(({ title, description, project }, index) => {
+            {categorizedPortfolio.map(({ title, description, hasExamples, project }, index) => {
               if (!project) return null;
 
               return (
@@ -514,16 +518,23 @@ export default function Home() {
                     className="group block h-full overflow-hidden rounded-sm border border-[#FF7A00]/18 bg-white/[0.035] shadow-[0_0_44px_rgba(255,122,0,0.08)] transition-colors hover:border-[#FF7A00]/50"
                   >
                     <div className="relative aspect-[4/5] overflow-hidden bg-black">
-                      <img
-                        src={project.coverImage}
-                        alt={project.title}
-                        className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                        loading={index < 4 ? 'eager' : 'lazy'}
-                      />
+                      {hasExamples ? (
+                        <img
+                          src={project.coverImage}
+                          alt={project.title}
+                          className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                          loading={index < 4 ? 'eager' : 'lazy'}
+                        />
+                      ) : (
+                        <div
+                          aria-hidden="true"
+                          className="absolute inset-0 bg-[radial-gradient(circle_at_20%_22%,rgba(255,122,0,0.22),transparent_30%),radial-gradient(circle_at_90%_12%,rgba(215,165,69,0.16),transparent_26%),linear-gradient(145deg,#100603,#050505_58%,#1a0b03)]"
+                        />
+                      )}
                       <div className="absolute inset-0 bg-gradient-to-t from-black via-black/82 via-45% to-transparent" />
                       <div className="absolute inset-x-0 bottom-0 h-2/3 bg-[linear-gradient(180deg,transparent,rgba(0,0,0,0.56)_28%,rgba(0,0,0,0.96)_100%)]" />
                       <div className="absolute left-4 top-4 rounded-sm border border-[#FF7A00]/35 bg-black/55 px-3 py-1 text-xs uppercase tracking-[0.22em] text-[#FF7A00] backdrop-blur-sm">
-                        Categoria
+                        {hasExamples ? 'Categoria' : 'Em breve'}
                       </div>
                       <div className="absolute inset-x-0 bottom-0 space-y-3 p-5">
                         <h3 className="text-2xl font-light tracking-wide text-white drop-shadow-[0_3px_12px_rgba(0,0,0,0.95)]">{title}</h3>
