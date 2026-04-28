@@ -520,13 +520,14 @@ export default function Home() {
                         className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                         loading={index < 4 ? 'eager' : 'lazy'}
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/92 via-black/20 to-transparent" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black via-black/82 via-45% to-transparent" />
+                      <div className="absolute inset-x-0 bottom-0 h-2/3 bg-[linear-gradient(180deg,transparent,rgba(0,0,0,0.56)_28%,rgba(0,0,0,0.96)_100%)]" />
                       <div className="absolute left-4 top-4 rounded-sm border border-[#FF7A00]/35 bg-black/55 px-3 py-1 text-xs uppercase tracking-[0.22em] text-[#FF7A00] backdrop-blur-sm">
                         Categoria
                       </div>
                       <div className="absolute inset-x-0 bottom-0 space-y-3 p-5">
-                        <h3 className="text-2xl font-light tracking-wide text-white">{title}</h3>
-                        <p className="text-sm font-light leading-relaxed text-white/68">{description}</p>
+                        <h3 className="text-2xl font-light tracking-wide text-white drop-shadow-[0_3px_12px_rgba(0,0,0,0.95)]">{title}</h3>
+                        <p className="text-sm font-light leading-relaxed text-white/82 drop-shadow-[0_2px_10px_rgba(0,0,0,0.95)]">{description}</p>
                       </div>
                     </div>
                   </Link>
