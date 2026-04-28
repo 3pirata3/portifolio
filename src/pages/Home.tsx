@@ -7,7 +7,6 @@ import teamImage from '@/assets/team-xgrowth.png';
 import { photographerInfo } from '@/data/photographer';
 import { getFeaturedProjects } from '@/data/projects';
 import { LeadCaptureForm } from '@/components/forms/LeadCaptureForm';
-import { ProjectCard } from '@/components/portfolio/ProjectCard';
 import { ScrollIndicator } from '@/components/ui/ScrollIndicator';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { SEOHead } from '@/components/seo/SEOHead';
@@ -73,6 +72,29 @@ const xgrowthDifference = [
   'Resultados mensuraveis e escalaveis',
 ];
 
+const portfolioCategories = [
+  {
+    title: 'Social Media',
+    description: 'Posts e criativos para manter presenca, autoridade e comunicacao comercial nas redes.',
+    slug: 'social-media-comercial',
+  },
+  {
+    title: 'Prova Social',
+    description: 'Pecas que reforcam confianca, reputacao e percepcao de valor para a marca.',
+    slug: 'prova-social-e-autoridade',
+  },
+  {
+    title: 'Criativos para Ads',
+    description: 'Artes de oferta para campanhas pagas com leitura rapida e foco em conversao.',
+    slug: 'criativos-de-oferta-para-ads',
+  },
+  {
+    title: 'Resultados e Conversao',
+    description: 'Conteudos e materiais que educam, quebram objecoes e aproximam o lead da compra.',
+    slug: 'conteudo-para-conversao',
+  },
+];
+
 const sectionDividerClass =
   'before:pointer-events-none before:absolute before:inset-x-0 before:top-0 before:z-20 before:h-px before:bg-gradient-to-r before:from-transparent before:via-[#D7A545]/70 before:to-transparent after:pointer-events-none after:absolute after:inset-x-0 after:bottom-0 after:z-20 after:h-px after:bg-gradient-to-r after:from-transparent after:via-[#D7A545]/60 after:to-transparent';
 
@@ -81,6 +103,12 @@ const sectionDividerClass =
  */
 export default function Home() {
   const featuredProjects = getFeaturedProjects();
+  const categorizedPortfolio = portfolioCategories
+    .map((category) => ({
+      ...category,
+      project: featuredProjects.find((project) => project.slug === category.slug),
+    }))
+    .filter((category) => category.project);
 
   return (
     <>
@@ -466,24 +494,45 @@ export default function Home() {
                 Prova e execucao
               </p>
               <h2 className="text-4xl md:text-5xl font-light tracking-wide">
-                Portfolio de resultados
+                Portfolio por categoria
               </h2>
-              <p className="text-lg text-white/68 font-light tracking-wide max-w-2xl mx-auto">
-                Criativos, campanhas, paginas e materiais que mostram como a estrategia ganha forma na pratica.
+              <p className="text-lg text-white/68 font-light tracking-wide max-w-3xl mx-auto">
+                Organizamos nossos trabalhos por tipo de entrega para o cliente entender rapidamente
+                como a XGrowth atua em conteudo, prova social, campanhas e conversao.
               </p>
             </div>
           </ScrollReveal>
 
-          <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-4">
-            {featuredProjects.map((project, index) => (
-              <ProjectCard
-                key={project.id}
-                project={project}
-                aspectRatio="portrait"
-                showCategory={true}
-                index={index}
-              />
-            ))}
+          <div className="relative z-10 mx-auto grid max-w-7xl grid-cols-1 gap-4 px-4 md:grid-cols-2 lg:grid-cols-4 md:px-8">
+            {categorizedPortfolio.map(({ title, description, project }, index) => {
+              if (!project) return null;
+
+              return (
+                <ScrollReveal key={title} delay={index * 0.08}>
+                  <Link
+                    to={`/project/${project.slug}`}
+                    className="group block h-full overflow-hidden rounded-sm border border-[#FF7A00]/18 bg-white/[0.035] shadow-[0_0_44px_rgba(255,122,0,0.08)] transition-colors hover:border-[#FF7A00]/50"
+                  >
+                    <div className="relative aspect-[4/5] overflow-hidden bg-black">
+                      <img
+                        src={project.coverImage}
+                        alt={project.title}
+                        className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                        loading={index < 4 ? 'eager' : 'lazy'}
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/92 via-black/20 to-transparent" />
+                      <div className="absolute left-4 top-4 rounded-sm border border-[#FF7A00]/35 bg-black/55 px-3 py-1 text-xs uppercase tracking-[0.22em] text-[#FF7A00] backdrop-blur-sm">
+                        Categoria
+                      </div>
+                      <div className="absolute inset-x-0 bottom-0 space-y-3 p-5">
+                        <h3 className="text-2xl font-light tracking-wide text-white">{title}</h3>
+                        <p className="text-sm font-light leading-relaxed text-white/68">{description}</p>
+                      </div>
+                    </div>
+                  </Link>
+                </ScrollReveal>
+              );
+            })}
           </div>
 
           <ScrollReveal delay={0.4}>
