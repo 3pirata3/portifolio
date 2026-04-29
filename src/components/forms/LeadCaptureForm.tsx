@@ -22,15 +22,20 @@ export function LeadCaptureForm() {
     const lastName = String(formData.get('lastName') || '').trim();
     const email = String(formData.get('email') || '').trim();
     const phone = String(formData.get('phone') || '').trim();
+    const companyName = String(formData.get('companyName') || '').trim();
     const companySector = String(formData.get('companySector') || '').trim();
+    const monthlyRevenue = String(formData.get('monthlyRevenue') || '').trim();
 
     const subject = `Novo lead XGrowth - ${firstName} ${lastName}`;
     const body = [
       `Nome: ${firstName} ${lastName}`,
       `E-mail: ${email}`,
       `Telefone: ${phone}`,
+      `Empresa: ${companyName}`,
       `Setor da empresa: ${companySector}`,
+      `Faturamento mensal: ${monthlyRevenue}`,
       '',
+      'Interesse: Diagnostico da Gestao da Jornada de Compra',
       'Origem: Formulario da pagina principal',
     ].join('\n');
 
@@ -51,7 +56,7 @@ export function LeadCaptureForm() {
         <CheckCircle2 className="size-12 mx-auto text-[#FF7A00]" />
         <h3 className="text-2xl font-light tracking-wide">Informacoes preparadas</h3>
         <p className="text-muted-foreground font-light">
-          Seu aplicativo de e-mail foi aberto com os dados para a XGrowth.
+          Seu aplicativo de e-mail foi aberto com os dados para agendar o diagnostico.
         </p>
       </div>
     );
@@ -118,16 +123,53 @@ export function LeadCaptureForm() {
       </div>
 
       <div className="space-y-2">
-        <Label htmlFor="lead-company-sector" className="font-light">
-          Setor da empresa
+        <Label htmlFor="lead-company-name" className="font-light">
+          Empresa
         </Label>
         <Input
-          id="lead-company-sector"
-          name="companySector"
-          placeholder="Ex: saude, educacao, varejo, servicos..."
+          id="lead-company-name"
+          name="companyName"
+          placeholder="Nome da empresa"
           required
           className="font-light"
         />
+      </div>
+
+      <div className="grid sm:grid-cols-2 gap-5">
+        <div className="space-y-2">
+          <Label htmlFor="lead-company-sector" className="font-light">
+            Setor da empresa
+          </Label>
+          <Input
+            id="lead-company-sector"
+            name="companySector"
+            placeholder="Ex: saude, educacao, varejo, servicos..."
+            required
+            className="font-light"
+          />
+        </div>
+
+        <div className="space-y-2">
+          <Label htmlFor="lead-monthly-revenue" className="font-light">
+            Faturamento mensal
+          </Label>
+          <select
+            id="lead-monthly-revenue"
+            name="monthlyRevenue"
+            required
+            defaultValue=""
+            className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm font-light ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+          >
+            <option value="" disabled>
+              Selecione uma faixa
+            </option>
+            <option value="Ate 50 mil">Ate 50 mil</option>
+            <option value="50 mil a 100 mil">50 mil a 100 mil</option>
+            <option value="100 mil a 300 mil">100 mil a 300 mil</option>
+            <option value="300 mil a 1 milhao">300 mil a 1 milhao</option>
+            <option value="Acima de 1 milhao">Acima de 1 milhao</option>
+          </select>
+        </div>
       </div>
 
       <Button
@@ -141,7 +183,7 @@ export function LeadCaptureForm() {
             Preparando...
           </>
         ) : (
-          'Quero um diagnostico da XGrowth'
+          'Quero agendar meu diagnostico'
         )}
       </Button>
     </form>

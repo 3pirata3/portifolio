@@ -2,20 +2,20 @@ import type { PhotographerInfo } from '@/types';
 
 export const photographerInfo: PhotographerInfo = {
   name: 'XGrowth Company',
-  tagline: 'Marketing e vendas para crescimento previsivel',
+  tagline: 'Gestao da jornada de compra para vender com previsibilidade',
   heroIntroduction:
-    'Metodologia comprovada para transformar seu negocio em uma maquina de vendas previsivel, conectando marketing, time comercial, retencao e escala.',
-  biography: `A XGrowth Company atua alem da ponta do iceberg. Em vez de trabalhar apenas redes sociais e trafego pago, conectamos estrategia, demanda, processo comercial e retencao para criar previsibilidade em cada etapa do funil.
+    'Uma assessoria completa para estruturar atracao, conversao, venda, retencao e recompra em um unico processo de crescimento.',
+  biography: `A XGrowth Company atua alem da ponta do iceberg. Em vez de vender servicos isolados como posts, anuncios ou artes avulsas, conectamos estrategia, demanda, processo comercial e retencao para criar previsibilidade em cada etapa da jornada de compra.
 
 O portifolio existe para mostrar a execucao na pratica: campanhas, criativos, paginas, materiais e estruturas que ajudam negocios a gerar demanda qualificada, vender melhor e manter clientes comprando por mais tempo.`,
   approach: `Nossa metodologia Iceberg revela oportunidades ocultas dentro do negocio antes de acelerar campanhas. Exploramos mercado, oferta, concorrencia e processo comercial; lapidamos a estrategia; escalamos a execucao; e extraimos resultados com otimizacao continua.
 
 Assim, o crescimento nao depende apenas de publicar conteudo ou apertar botoes em campanhas. Ele nasce de um sistema completo, mensuravel e preparado para vender de forma consistente.`,
   awards: [
-    'Retencao de clientes',
-    'Treinamento do time comercial',
-    'Aumento de demanda com marketing estrategico',
-    'Criativos, campanhas e paginas para conversao',
+    'Social media, criativos e trafego dentro da estrategia',
+    'Funil comercial, acompanhamento e treinamento do time',
+    'Retencao, recorrencia, recompra e indicacao',
+    'Analise de dados, gargalos e otimizacao continua',
   ],
   clients: [
     'Negocios locais',

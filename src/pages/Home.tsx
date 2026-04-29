@@ -26,20 +26,29 @@ import { Link } from 'react-router-dom';
 
 const growthPillars = [
   {
-    title: 'Retencao de clientes',
-    description: 'Estrategias para manter seus clientes comprando mais e por mais tempo.',
-    Icon: Repeat,
+    title: 'Atracao qualificada',
+    description: 'Social media, criativos, trafego e campanhas trabalhando juntos para gerar demanda com intencao de compra.',
+    Icon: TrendingUp,
   },
   {
-    title: 'Treinamento do time comercial',
-    description: 'Capacitacao completa para transformar seu time em maquina de vendas.',
+    title: 'Conversao comercial',
+    description: 'Funil, atendimento, follow-up, CRM e treinamento para transformar contatos em oportunidades reais de venda.',
     Icon: Users,
   },
   {
-    title: 'Aumento de demanda com marketing estrategico',
-    description: 'Marketing que gera leads qualificados e prontos para comprar.',
-    Icon: TrendingUp,
+    title: 'Retencao e recorrencia',
+    description: 'Processos para manter clientes comprando mais vezes, indicar a empresa e aumentar o lucro no longo prazo.',
+    Icon: Repeat,
   },
+];
+
+const journeyIncludes = [
+  'Social media estrategico',
+  'Criativos para ads',
+  'Gestao de trafego',
+  'Funil comercial',
+  'Treinamento comercial',
+  'Retencao e recorrencia',
 ];
 
 const icebergStages = [
@@ -177,7 +186,7 @@ export default function Home() {
                   href="#lead-capture"
                   className="inline-flex h-12 items-center justify-center rounded-sm bg-[#FF7A00] px-7 text-base font-light tracking-wide text-white transition-colors hover:bg-[#e86f00]"
                 >
-                  Quero diagnosticar meu negocio
+                  Quero meu diagnostico
                 </a>
                 <Link
                   to="/portfolio"
@@ -219,14 +228,14 @@ export default function Home() {
             <ScrollReveal>
               <div className="max-w-4xl mx-auto text-center space-y-6">
                 <p className="text-sm uppercase tracking-[0.3em] text-[#FF7A00]">
-                  Sistema comercial completo
+                  Oferta XGrowth
                 </p>
                 <h2 className="text-3xl md:text-5xl font-light tracking-wide">
-                  Metodologia comprovada para transformar seu negocio em uma maquina de vendas previsivel
+                  O que voce contrata e a Gestao da Jornada de Compra
                 </h2>
                 <p className="text-lg font-light leading-relaxed text-white/68">
-                  A XGrowth estrutura o crescimento onde ele realmente acontece: demanda, processo comercial,
-                  retencao e execucao. O portfolio mostra a ponta visivel; a metodologia sustenta o resultado.
+                  Nao vendemos posts, anuncios ou criativos de forma isolada. A XGrowth estrutura a jornada completa:
+                  atracao, conversao, venda, retencao, recompra e otimizacao dos numeros que realmente importam.
                 </p>
               </div>
             </ScrollReveal>
@@ -244,6 +253,24 @@ export default function Home() {
                 </ScrollReveal>
               ))}
             </div>
+
+            <ScrollReveal delay={0.3}>
+              <div className="mx-auto max-w-5xl space-y-5 text-center">
+                <p className="text-sm uppercase tracking-[0.28em] text-[#FF7A00]">
+                  Dentro da gestao, executamos
+                </p>
+                <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+                  {journeyIncludes.map((item) => (
+                    <div
+                      key={item}
+                      className="rounded-sm border border-[#FF7A00]/18 bg-black/28 px-4 py-3 text-sm font-light tracking-wide text-white/78 shadow-[0_0_28px_rgba(255,122,0,0.06)]"
+                    >
+                      {item}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </ScrollReveal>
           </div>
         </section>
 
@@ -271,11 +298,11 @@ export default function Home() {
                   Por que Iceberg?
                 </p>
                 <h2 className="text-4xl font-light leading-[1.08] tracking-wide md:text-5xl lg:text-6xl">
-                  99% das agencias atuam apenas na ponta do iceberg
+                  Seu negocio nao precisa de mais acoes soltas. Precisa de uma jornada que venda.
                 </h2>
                 <p className="text-base font-light leading-relaxed text-white/72 md:text-lg">
-                  Redes sociais e trafego pago sao importantes, mas representam apenas a parte visivel.
-                  Na XGrowth, atuamos em todos os processos para criar previsibilidade em cada etapa.
+                  Redes sociais, criativos e trafego pago sao importantes, mas representam apenas a parte visivel.
+                  A XGrowth conecta tudo isso ao processo comercial, retencao, recorrencia e dados para criar previsibilidade.
                 </p>
 
                 <div className="space-y-4">
@@ -317,11 +344,11 @@ export default function Home() {
 
                   <div className="space-y-6">
                     {[
-                      ['Ponta visivel', 'Conteudo, criativos e trafego pago', 'w-full'],
+                      ['Ponta visivel', 'Social media, criativos e trafego pago', 'w-full'],
                       ['Processo comercial', 'Follow-up, proposta, CRM e treinamento', 'w-10/12'],
                       ['Oferta e posicionamento', 'Mensagem, publico, promessa e prova', 'w-8/12'],
                       ['Retencao e recorrencia', 'Experiencia, recompra e indicacao', 'w-6/12'],
-                      ['Dados e otimizacao', 'Metricas, gargalos e escala', 'w-4/12'],
+                      ['Dados e otimizacao', 'Lucro, faturamento, investimento e ROI', 'w-4/12'],
                     ].map(([label, detail, width]) => (
                       <div key={label} className="space-y-3">
                         <div className="flex items-center justify-between gap-4 text-sm">
@@ -375,21 +402,20 @@ export default function Home() {
             <ScrollReveal delay={0.2}>
               <div className="space-y-6">
                 <p className="text-sm uppercase tracking-[0.3em] text-[#FF7A00]">
-                  Time e processo
+                  Jornada na pratica
                 </p>
                 <h2 className="text-3xl md:text-5xl font-light tracking-wide">
-                  Campanhas analisadas com olhar de vendas, nao so de midia
+                  Marketing, comercial e retencao olhando para o mesmo objetivo
                 </h2>
                 <p className="text-lg text-white/68 font-light leading-relaxed">
-                  Nossa equipe olha para criativos, metricas, oferta, atendimento e retencao no mesmo
-                  processo. Assim, cada campanha deixa de ser uma acao isolada e vira parte de um sistema
-                  previsivel de crescimento.
+                  Cada campanha precisa responder a uma estrategia maior: qual oferta vender, para quem, em qual etapa
+                  da jornada, com qual abordagem comercial e como transformar esse cliente em recorrencia.
                 </p>
                 <a
                   href="#lead-capture"
                   className="inline-flex items-center gap-2 text-base font-light tracking-wide text-white hover:text-[#FF7A00] transition-colors group"
                 >
-                  <span>Quero entender meu potencial oculto</span>
+                  <span>Quero um plano para vender mais</span>
                   <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
                 </a>
               </div>
@@ -456,24 +482,24 @@ export default function Home() {
                   Diagnostico XGrowth
                 </p>
                 <h2 className="text-3xl md:text-5xl font-light tracking-wide">
-                  Deixe seus dados para avaliarmos o potencial oculto do seu negocio
+                  Receba um plano personalizado para vender com previsibilidade
                 </h2>
                 <p className="text-lg text-white/68 font-light leading-relaxed">
-                  Recebemos suas informacoes iniciais e entramos em contato para entender onde estao os
-                  gargalos de demanda, conversao e retencao.
+                  Agende um diagnostico online com a XGrowth. Em ate 8h, entramos em contato para marcar a reuniao
+                  e entender onde estao os gargalos de atracao, conversao, venda e retencao.
                 </p>
                 <div className="grid gap-3 text-white/68 font-light">
                   <div className="flex items-start gap-3">
                     <CheckCircle2 className="size-5 mt-0.5 text-[#FF7A00]" />
-                    <span>Analise de marketing e processo comercial</span>
+                    <span>Analise da jornada de compra ponta a ponta</span>
                   </div>
                   <div className="flex items-start gap-3">
                     <CheckCircle2 className="size-5 mt-0.5 text-[#FF7A00]" />
-                    <span>Identificacao dos principais gargalos de crescimento</span>
+                    <span>Identificacao dos gargalos de demanda, vendas e recorrencia</span>
                   </div>
                   <div className="flex items-start gap-3">
                     <CheckCircle2 className="size-5 mt-0.5 text-[#FF7A00]" />
-                    <span>Proximo passo claro para gerar mais previsibilidade</span>
+                    <span>Plano inicial para escalar com previsibilidade e lucro</span>
                   </div>
                 </div>
               </div>

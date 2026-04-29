@@ -90,6 +90,18 @@ export function Header() {
               </motion.div>
             ))}
             <motion.div
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: 0.45 }}
+            >
+              <Link
+                to="/#lead-capture"
+                className="inline-flex h-10 items-center justify-center rounded-sm bg-[#FF7A00] px-5 text-sm font-light tracking-wide text-white transition-colors hover:bg-[#e86f00]"
+              >
+                Diagnostico gratuito
+              </Link>
+            </motion.div>
+            <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.4, delay: 0.4 }}
@@ -123,6 +135,13 @@ export function Header() {
                       {link.name}
                     </Link>
                   ))}
+                  <Link
+                    to="/#lead-capture"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="inline-flex h-11 items-center justify-center rounded-sm bg-[#FF7A00] px-5 text-base font-light tracking-wide text-white hover:bg-[#e86f00]"
+                  >
+                    Diagnostico gratuito
+                  </Link>
                 </nav>
               </SheetContent>
             </Sheet>
